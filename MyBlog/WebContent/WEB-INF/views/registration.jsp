@@ -33,11 +33,11 @@
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type="text" name="password" /></td>
+				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
 				<td>Confirm Password:</td>
-				<td><input type="text" name="confirmPassword" /></td>
+				<td><input type="password" name="confirmPassword" /></td>
 			</tr>
 		</table>
 		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />
