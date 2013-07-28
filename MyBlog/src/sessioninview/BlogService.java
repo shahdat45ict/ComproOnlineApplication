@@ -83,8 +83,8 @@ public class BlogService {
 	}
 
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
-	public int checkUser(String username, String password) {
-		if(userdao.getUser(username, password) > 0)
+	public int checkUser(String email, String password) {
+		if(userdao.getUser(email, password) > 0)
 			return 1;
 		else
 			return 0;

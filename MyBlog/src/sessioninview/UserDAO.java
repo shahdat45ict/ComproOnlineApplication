@@ -51,9 +51,9 @@ public class UserDAO {
 	}
 	
 	@Transactional
-	public int getUser(String username, String password) {
-		Query query = (Query) sf.getCurrentSession().createQuery("from User where nicName = :nicname and password = :password");
-        query.setParameter("nicname", username);
+	public int getUser(String email, String password) {
+		Query query = (Query) sf.getCurrentSession().createQuery("from User where email = :email and password = :password");
+        query.setParameter("email", email);
         query.setParameter("password", password);
 		@SuppressWarnings("unchecked")
 		List<User> users = query.list();
