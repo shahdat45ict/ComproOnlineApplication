@@ -17,8 +17,8 @@ public class LoginLogoutController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(String username, String password) {
-		int checkValidity = blogService.checkUser(username, password);
+	public String login(String email, String password) {
+		int checkValidity = blogService.checkUser(email, password);
 		if(checkValidity == 1)
 		  return "redirect:/admin/posts";
 		else
