@@ -13,8 +13,8 @@
 <div id="wrapper">
 <div id="wrapper_in">
 <div id="header">
-<span class="logo"><a href="/MyBlog">My Blog</a></span>
-<img src="http://localhost:8080/MyBlog/resources/images/berries.jpg" width="1000" height="198" />
+<span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
+<img src="/ComproOnlineApplication/resources/images/berries.jpg" width="1000" height="198" />
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
