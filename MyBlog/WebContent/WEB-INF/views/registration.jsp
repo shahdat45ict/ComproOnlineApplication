@@ -5,9 +5,55 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:url value="/resources/css/style.css" var="cssURL" />  
-<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />  
+<c:url value="/resources/css/style.css" var="cssURL" />
+<c:url value="/resources/css/style.css" var="validatorCssURL" />  
+<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />
+<link rel="stylesheet" type="text/css" media="screen" href="${validatorCssURL}" />  
+<c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
+<c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
+<c:url value="/resources/js/comproOnline.js" var="jsURL" />
+<script type="text/javascript" src="${jqueryURL}"></script>
+<script type="text/javascript" src="${validatorURL}"></script>
+<script type="text/javascript" src="${jsURL}"></script>
 <title>Compro Online Application - Registration</title>
+<script>
+$().ready(function() {
+	// validate signup form on keyup and submit
+	 $("#formRegistration").validate({
+		rules: {
+			firstName: "required",
+			lastName: "required",			
+			password: {
+				required: true,
+				minlength: 6
+			},
+			confirmPassword: {
+				required: true,
+				minlength: 6,
+				equalTo: "#txtPassword"
+			},
+			email: {
+				required: true,
+				email: true
+			}			
+		},
+		messages: {
+			firstName: "Please enter your firstname",
+			lastName: "Please enter your lastname",			
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 6 characters long"
+			},
+			confirmPassword: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 6 characters long",
+				equalTo: "Please enter the same password as above"
+			},
+			email: "Please enter a valid email address"
+		}
+	});
+});
+</script>
 </head>
 <div id="wrapper">
 <div id="wrapper_in">
@@ -17,30 +63,31 @@
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
-<form action="registration" method="post">
+<form action="registration" method="post" id="formRegistration" class="cmxform">
 		<table>
 			<tr>
-				<td>First Name:</td>
-				<td><input type="text" name="firstName" /></td>
+				<td><label for="txtFirstName">First Name:</label></td>
+				<td><input id="txtFirstName" name="firstName" type="text"/></td>
 			</tr>
 			<tr>
-				<td>Last Name:</td>
-				<td><input type="text" name="lastName" /></td>
+				<td><label for="txtLastName">Last Name:</label></td>
+				<td><input id="txtLastName" type="text" name="lastName"/></td>
 			</tr>
 			<tr>
-				<td>Email:</td>
-				<td><input type="text" name="email" /></td>
+				<td><label for="txtEmail">Email:</label></td>
+				<td><input id="txtEmail" type="text" name="email"/>
+				</td>
 			</tr>
 			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password" /></td>
+				<td><label for="txtPassword">Password:</label></td>
+				<td><input id="txtPassword" type="password" name="password"/></td>
 			</tr>
 			<tr>
-				<td>Confirm Password:</td>
-				<td><input type="password" name="confirmPassword" /></td>
+				<td><label for="txtConfirmPassword">Confirm Password:</label></td>
+				<td><input id="txtConfirmPassword" type="password" name="confirmPassword"/></td>
 			</tr>
 		</table>
-		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />
+		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />		
 	</form>
 	
 </div>
