@@ -16,44 +16,7 @@
 <script type="text/javascript" src="${validatorURL}"></script>
 <script type="text/javascript" src="${jsURL}"></script>
 <title>Compro Online Application - Registration</title>
-<script>
-$().ready(function() {
-	// validate signup form on keyup and submit
-	 $("#formRegistration").validate({
-		rules: {
-			firstName: "required",
-			lastName: "required",			
-			password: {
-				required: true,
-				minlength: 6
-			},
-			confirmPassword: {
-				required: true,
-				minlength: 6,
-				equalTo: "#txtPassword"
-			},
-			email: {
-				required: true,
-				email: true
-			}			
-		},
-		messages: {
-			firstName: "Please enter your firstname",
-			lastName: "Please enter your lastname",			
-			password: {
-				required: "Please provide a password",
-				minlength: "Your password must be at least 6 characters long"
-			},
-			confirmPassword: {
-				required: "Please provide a password",
-				minlength: "Your password must be at least 6 characters long",
-				equalTo: "Please enter the same password as above"
-			},
-			email: "Please enter a valid email address"
-		}
-	});
-});
-</script>
+
 </head>
 <div id="wrapper">
 <div id="wrapper_in">
