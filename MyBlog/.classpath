@@ -13,16 +13,18 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HibernateLibrary">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HibernateLibrary"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringLibrary"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate Library">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringLibrary">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring Library">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Development/JavaWorkspace/Spring STS/StudentMaterials/StudentMaterials/libraries/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="F:/MUM-COURSES/EA/StudentMaterials/StudentMaterials/libraries/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
