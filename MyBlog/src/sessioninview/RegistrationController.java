@@ -19,7 +19,7 @@ public class RegistrationController {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String registration(User user) {
 		blogService.addNewUser(user);
-		return "redirect:/admin/posts";
+		return "redirect:/login";
 	}	
 	
 }
