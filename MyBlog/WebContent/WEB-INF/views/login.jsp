@@ -49,7 +49,7 @@
 <div id="footer">
   <div id="colophon">
 	  <div id="site-info">
-	    <a rel="home" title="Lincoln's Blog" href="/MyBlog"> Lincoln's Blog For Enterprise Architecture Project</a>
+	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
 	  </div>
   </div>
 </div>
