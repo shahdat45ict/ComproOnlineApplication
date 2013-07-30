@@ -77,31 +77,28 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
- 	
- 	
-	<!-- email added by Wang-->
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		 <property name="host" value="smtp.cs.mum.edu" />  
-		 <property name="username" value="Yanlong.Wang@cs.mum.edu" />  
-    	 <property name="password" value="" /> 
-    	 <property name="javaMailProperties">  
-         <props>  
-             <prop key="mail.smtp.auth">true</prop>  
-             <prop key="mail.smtp.timeout">25000</prop>  
-           	 <prop key="mail.smtp.socketFactory.port">465</prop>  
-             <prop key="mail.smtp.socketFactory.fallback">false</prop>  
-             <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
-         </props>  
-    	 </property>  
-	</bean>
-	<bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
-    	<property name="from"><value><![CDATA[TitanGroup]]></value></property>
-    	<property name="subject"><value>Activate your new account in Compro On-Line Application System</value></property>
+	
+ 	<!-- added by wang.yanlong email -->
+ 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <!-- SMTP settings -->
+	    <property name="host" value="smtp.gmail.com" />
+	    <property name="port" value="587" />
+	    <property name="username" value="wangyanlong0107@gmail.com" />
+	    <property name="password" value="wyl.WYL19850107" />
+	 
+	    <property name="javaMailProperties">
+	        <!-- additional properties specific to JavaMail -->
+	        <props>
+	            <prop key="mail.transport.protocol">smtp</prop>
+	            <prop key="mail.smtp.auth">true</prop>
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	        </props>
+	    </property>
 	</bean>
 	<bean id="emailService" class="com.titan.util.EmailService">
-	   <property name="mailSender" ref="mailSender" />
-	   <property name="mailMessage" ref="mailMessage" />
+		<property name="mailSender" ref="mailSender"></property>
 	</bean>
 	<!-- end -->
+	
 	
 </beans>

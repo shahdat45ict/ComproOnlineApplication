@@ -178,3 +178,8 @@ h3.reply-title{
 	padding: 8px;
 	margin: 16px;
 }
+.validationMessage
+{
+	display:none;
+	color:#ff0000;
+}
