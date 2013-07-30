@@ -129,4 +129,8 @@ public class User {
 	public void setComment(Comment comment) {
 		this.comments.add(comment);
 	}
+	
+	public String getFullName(){
+		return this.getFirstName() + this.getLastName();
+	}
 }
