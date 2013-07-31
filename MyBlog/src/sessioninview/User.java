@@ -30,6 +30,10 @@ public class User {
 	@Temporal(TemporalType.DATE)
 	private Date registered;
 	private String status;
+	
+	Date dt = new Date();
+	String registrationDate =  dt.getMonth() + "/" + dt.getDay() + "/" + dt.getYear();
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinTable(name = "user_post", joinColumns = { @JoinColumn(name = "User_id") }, inverseJoinColumns = { @JoinColumn(name = "Post_id") })
 	private List<Post> posts = new ArrayList<Post>();
@@ -44,12 +48,11 @@ public class User {
 	public User() {
 	}
 	
-	public User(String firstName, String lastName, String email, String registered,
+	public User(String firstName, String lastName, String email,
 			String status, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.setRegistered(registered);
 		this.status = status;
 		this.password = password;
 	}
@@ -98,9 +101,9 @@ public class User {
 		return registered;
 	}
 
-	public void setRegistered(String registered) {
+	public void setRegistered() {
 		try {
-			this.registered = df.parse(registered);
+			this.registered = df.parse(this.registrationDate);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -128,9 +131,5 @@ public class User {
 
 	public void setComment(Comment comment) {
 		this.comments.add(comment);
-	}
-	
-	public String getFullName(){
-		return this.getFirstName() + this.getLastName();
 	}
 }

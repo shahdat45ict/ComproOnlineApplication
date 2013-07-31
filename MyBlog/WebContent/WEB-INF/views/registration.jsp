@@ -50,9 +50,15 @@
 				<td><input id="txtConfirmPassword" type="password" name="confirmPassword"/></td>
 			</tr>
 		</table>
+		<%@page import="java.util.Calendar"%>
+		<%@page import="java.util.GregorianCalendar"%>
+		 <%
+		      GregorianCalendar cal = new GregorianCalendar();
+		 %>
+		<input type="hidden" name="registered" value="<% out.print(cal.get(Calendar.YEAR)+"-"+cal.get(Calendar.MONTH)+"-"+cal.get(Calendar.DATE)); %>" />
 		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />		
 	</form>
-	
+
 </div>
 <div id="wrapper_right">
 
@@ -61,7 +67,7 @@
 <div id="footer">
   <div id="colophon">
 	  <div id="site-info">
-	    <a rel="home" title="Lincoln's Blog" href="/MyBlog"> Lincoln's Blog For Enterprise Architecture Project</a>
+	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
 	  </div>
   </div>
 </div>
