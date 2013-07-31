@@ -78,27 +78,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
- 	<!-- added by wang.yanlong email -->
- 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-	    <!-- SMTP settings -->
-	    <property name="host" value="smtp.gmail.com" />
-	    <property name="port" value="587" />
-	    <property name="username" value="wangyanlong0107@gmail.com" />
-	    <property name="password" value="wyl.WYL19850107" />
-	 
-	    <property name="javaMailProperties">
-	        <!-- additional properties specific to JavaMail -->
-	        <props>
-	            <prop key="mail.transport.protocol">smtp</prop>
-	            <prop key="mail.smtp.auth">true</prop>
-	            <prop key="mail.smtp.starttls.enable">true</prop>
-	        </props>
-	    </property>
-	</bean>
-	<bean id="emailService" class="com.titan.util.EmailService">
-		<property name="mailSender" ref="mailSender"></property>
-	</bean>
-	<!-- end -->
+ 	
 	
 	
 </beans>
