@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: blue;
+}
+
+a:hover {
+	color: black;
+}
+
+body,input,textarea {
+	color: #666666;
+	font-size: 12px;
+	line-height: 18px;
+}
+input{
+	width:200px;
+	height:20px;
+	margin-bottom:5px;
+}
+textarea{
+	width:350px;
+	height:100px;
+	margin-bottom:5px;	
+}
+.button{
+	width:100px;
+	height: 25px;
+	text-align:center;
+	margin-left:306px;
+}
+body {
+	background: none repeat scroll 0 0 #F1F1F1;
+}
+
+#wrapper {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+#wrapper_in {
+	width: 1000px;
+	margin: 0 auto;
+	background: #FFFFFF;
+}
+
+#header {
+	float: left;
+	width: 1000px;
+	height: 244px;
+	margin-top: 20px;
+}
+
+.logo {
+	float: left;
+	width: 1000px;
+	border-bottom: 3px solid black;
+	padding-bottom: 10px;
+}
+
+.logo a {
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 30px;
+	line-height: 36px;
+}
+#wrapper_middle{
+	float:left;
+	background-color:#FFFFFF;
+}
+#wrapper_left {
+	float: left;
+	width: 775px;
+	height: auto;
+	margin: 0;
+	padding: 35px 10px 10px 15px;
+	background-color:#FFFFFF;
+}
+
+#wrapper_left .post {
+	margin: 0 0 48px;
+	color: #333333;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+#wrapper_right {
+	float: left;
+	width: 175px;
+	height: 370px;
+	margin: 0;
+	padding: 35px 10px 10px 15px;
+	background-color:#FFFFFF;
+}
+
+#wrapper_right ul {
+	list-style-type: none;
+}
+#wrapper_right ul {
+	list-style: square outside none;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 14px;
+}
+#wrapper_right ul li a{
+	text-decoration:none;
+}
+
+.widget-title {
+	color: #222222;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom:4px;
+}
+a.title, h1.title {
+	color: #000000;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 0;
+	clear: both;
+	text-decoration: none;	'
+}
+h3.reply-title{
+    display: block;
+    margin: 15px 0 15px 0;
+    padding-top: 0;
+	color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+#footer {
+	float: left;
+	width: 1000px;
+	height: 50px;
+}
+
+#colophon {
+	border-top: 4px solid #000000;
+	overflow: hidden;
+	padding: 18px 0;
+}
+
+#site-info a {
+	color: black;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	font-size:14px;
+}
+.admin-title{
+	display:block;
+	font-size:16px;
+	margin-bottom:10px;
+}
+.admin-command-link{
+	display:block;
+	margin: 10px 0 10px 0;
+}
+.dashboard{
+	text-align:center;
+}
+.error {
+	color: #ff0000;
+}
+
+.errorblock {
+	color: #ff0000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+.validationMessage
+{
+	display:none;
+	color:#ff0000;
+}
