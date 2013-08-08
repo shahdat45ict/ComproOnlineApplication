@@ -49,7 +49,7 @@ Soon after you have submitted your application, we will notify you of your preli
 <h3 class="widget-title">Meta</h3>
 <ul>
 	<li><a href="registration">Register</a></li>
-	<li><a href="admin/posts">Dashboard</a></li>
+	<li><a href="educationhistoryform/educationhistoryform/">Education History Form</a></li>
 	<li><a href="login">Log in</a></li>
 	<li><a href="englishproficiency">English Proficiency</a></li>
 	<li><a href="englishproficiency/1">Update English Proficiency</a>
