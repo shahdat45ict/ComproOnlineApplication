@@ -23,23 +23,7 @@ public class UserDAO {
 	 */
 
 	public void init() {
-		Session session = sf.openSession();
-		Transaction tx = session.beginTransaction();
-
-		//User user = new User("Lincoln", "Datta", "lincolnbd_cuet@yahoo.com", "1", "123456");
-		/*
-		 * Post post1 = new Post("Test title1", "Test content1", "publish",
-		 * "05/19/2013"); Post post2 = new Post("Test title2", "Test content2",
-		 * "publish", "05/19/2013"); Post post3 = new Post("Test title3",
-		 * "Test content3", "publish", "05/19/2013"); Comment comment1 = new
-		 * Comment("05/19/2013", "Test comment for post1", 1, 0);
-		 * user.setPost(post1); user.setPost(post2); user.setPost(post3);
-		 * user.setComment(comment1); post1.setComment(comment1);
-		 */
-
-		//session.persist(user);
-		//tx.commit();
-		//session.close();
+		
 	}
 
 	@Transactional(propagation = Propagation.SUPPORTS)

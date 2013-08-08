@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="${validatorCssURL}" />  
 <c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
 <c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
-<c:url value="/resources/js/comproOnline.js" var="jsURL" />
+<c:url value="/resources/js/registration-login.js" var="jsURL" />
 <script type="text/javascript" src="${jqueryURL}"></script>
 <script type="text/javascript" src="${validatorURL}"></script>
 <script type="text/javascript" src="${jsURL}"></script>

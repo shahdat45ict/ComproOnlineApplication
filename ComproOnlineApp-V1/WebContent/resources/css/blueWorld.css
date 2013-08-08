@@ -1,0 +1,93 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	/*width: 700px;*/
+	background-image: url('/ComproOnlineApplication/resources/images/worldmap.jpg'); 
+	background-attachment: fixed;
+	
+	text-align: center;  /*Needed for IE to do centering*/
+	color: darkblue;
+	
+	margin-left: auto;	/*'Normal' way of centering*/
+	margin-right: auto;
+}
+
+div.header{
+	width: 700px;
+	
+	text-align: left;
+	font-size: 18pt;
+	font-style: italic;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+div.box {
+	width: 947px;
+	background-color: EEEEFF;
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: darkblue;
+	
+	text-align: left;
+	
+	padding: 10px;
+}
+
+div.innerBox {
+/*	width: 620px; */
+	background-color: FFFFFF;
+	display: none;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: darkblue;
+
+/*	margin-left: 15px; */
+	padding: 10px; 
+}
+div.littleBox{
+	width: 300px;
+	background-color: 99CCCC;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: darkblue;
+}
+div.blueBox{
+	width: 700px;
+	background-color: 99CCCC;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: darkblue;
+}
+th {
+	text-align: left;
+}
+
+.indent {
+	/*width: 600px;*/
+	margin-left: 10px; 
+	/*padding-left: 10px;*/
+}
+.subHeader{
+	font-size: 13pt;
+	font-weight: bold;
+}
+.description {
+	width: 600px;
+	font-style: italic;
+}
+.note{
+	font-size: 9pt;
+	color: black;
+}
+
+.b {
+	font-weight: bold;
+}
+.i {
+	font-style: italic;
+}

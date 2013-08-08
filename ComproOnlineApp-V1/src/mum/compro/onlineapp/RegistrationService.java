@@ -1,5 +1,7 @@
 package mum.compro.onlineapp;
 
+import mum.compro.mail.util.MailUtil;
+
 import org.hibernate.Hibernate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,7 @@ public class RegistrationService {
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)	
 	public void addNewUser(User user){
+		//MailUtil.sendEmailTo(desAddress, subject, content);
 		userdao.create(user);
 	}
 

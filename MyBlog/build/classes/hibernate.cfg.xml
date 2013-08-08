@@ -5,7 +5,7 @@
 <hibernate-configuration>
 	<session-factory>
         <!-- MySQL DB running on localhost -->
-        <property name="connection.url">jdbc:mysql://localhost/test</property>
+        <property name="connection.url">jdbc:mysql://localhost/compro</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">ODBC</property>
         <property name="connection.password"></property>

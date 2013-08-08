@@ -20,7 +20,9 @@
 	<bean id="registrationService" class="mum.compro.onlineapp.RegistrationService">
 	   <property name="userdao" ref="userDAO" />
 	</bean>
-	
+	<bean id="passwordService" class="mum.compro.onlineapp.PasswordService">
+	   <property name="userdao" ref="userDAO" />
+	</bean>
 	<bean id="userDAO" class="mum.compro.onlineapp.UserDAO" init-method="init">
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
