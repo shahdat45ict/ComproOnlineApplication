@@ -11,11 +11,14 @@
 <link rel="stylesheet" type="text/css" media="screen" href="${validatorCssURL}" />  
 <c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
 <c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
-<c:url value="/resources/js/comproOnline.js" var="jsURL" />
+<c:url value="/resources/js/registration-login.js" var="jsURL" />
 <script type="text/javascript" src="${jqueryURL}"></script>
 <script type="text/javascript" src="${validatorURL}"></script>
 <script type="text/javascript" src="${jsURL}"></script>
-<title>Compro Online Application - Login</title>
+<script type="text/javascript">
+	
+</script>
+<title>Compro Online Application - Change Password</title>
 
 </head>
 <body>
@@ -27,20 +30,27 @@
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
-<form id="formLogin" action="login" method="post" class="cmxform">
+<form id="formChangePassword" action="changePassword" method="post" class="cmxform">
 		<table>
 			<tr>
-				<td>Email:</td>
-				<td><input type="text" name="email" /></td>
+				<td>Enter old password:</td>
+				<td><input id="oldPassword"  type="password" name="oldpassword" /></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password" /></td>
+				<td>Enter new password:</td>
+				<td><input id="newPassword" type="password" name="newpassword" /></td>
 			</tr>
+			<tr>
+			<td>Confirm new password:</td>
+				<td><input id="confirmPassword"  type="password" name="confirmpassword" /></td>
+			</tr>
+			
 		</table>
-		<input type="submit" value="Log in" class="button" style="margin-left:158px;" />
+		<input type="submit" value="submit" class="button" style="margin-left:158px;" />
+		
+
+				
 	</form>
-	<br><a href="forgotPassword">Forgotton Password?</a>
 	
 </div>
 <div id="wrapper_right">
@@ -57,4 +67,4 @@
 </div>	
 </div>
 </body>
-</html>	
+</html>
