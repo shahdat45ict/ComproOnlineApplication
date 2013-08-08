@@ -25,6 +25,27 @@
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+    <bean id="personalInfoService" class="mum.compro.onlineapp.PersonalInfoService">
+     <property name="personalInfoDao" ref="personalInfoDao" />
+	</bean>
+	
+	<bean id="personalInfoDao" class="mum.compro.onlineapp.PersonalInfoDAO" init-method="init">
+	   <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+		
+	<bean id="educationHistoryService" class="mum.compro.onlineapp.educationhistory.EducationHistoryService">
+	   <property name="educationHistoryDAO" ref="educationHistoryDAO" />
+	</bean>
+	
+	<bean id="educationHistoryDAO" class="mum.compro.onlineapp.educationhistory.EducationHistoryDAO" init-method="init">
+	   <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="englishProficiencyService" class="mum.compro.onlineapp.EnglishProficiencyService">
+    	<property name="englishProficiencyDao" ref="englishProficiencyDAO" />
+ 	</bean>
+ 	<bean id="englishProficiencyDAO" class="mum.compro.onlineapp.EnglishProficiencyDAO" init-method="init">
+   	 	<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 	<!-- Hibernate SessionFactory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -34,6 +55,10 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>mum.compro.onlineapp.User</value> 
+				<value>mum.compro.onlineapp.PersonalInfo</value> 
+				<value>mum.compro.onlineapp.educationhistory.CollegeAttended</value> 
+				<value>mum.compro.onlineapp.educationhistory.EducationHistoryForm</value> 
+				<value>mum.compro.onlineapp.EnglishProficiency</value>
 			</list>
 		</property>
 	</bean>
