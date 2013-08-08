@@ -20,7 +20,7 @@
 <c:url value="/resources/js/comproOnline.js" var="jsURL" />
 <c:url value="/resources/js/appCheck.js" var="appCheck" />
 <c:url value="/resources/js/appLogic.js" var="appLogic" />
-<c:url value="/resources/js/validator.js" var="validator" />
+<c:url value="/resources/js/educationhistoryvalidator.js" var="validator" />
 <script type="text/javascript" src="${jqueryURL}"></script>
 <script type="text/javascript" src="${validatorURL}"></script>
 <script type="text/javascript" src="${jsURL}"></script>
@@ -42,7 +42,7 @@
 			<div id="wrapper_left">
 				<%-- <form action="../saveeducationhistoryform" method="post"
 					id="educationhistoryform" class="cmxform" name="educationhistoryform"> --%>
-					<form:form action="../saveeducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
+					<form:form action="../submiteducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
 					<div class="header">Educational History:</div>
 					<div class="box">
 
@@ -302,7 +302,7 @@
 								<td>Years: 
 								<!-- <select name="totalYearOfSecondaryEdu" id="totalYearOfSecondaryEdu" style="width: 40px"> -->
 								<form:select path="totalYearOfSecondaryEdu" id="totalYearOfSecondaryEdu" style="width: 40px;">
-										<form:option value="">0</form:option>
+										<form:option value="0">0</form:option>
 										<form:option value="1">1</form:option>
 										<form:option value="2">2</form:option>
 										<form:option value="3">3</form:option>
@@ -313,7 +313,7 @@
 									&nbsp;&nbsp; Months: 
 								<!-- <select name="totalMonthOfSecondaryEdu" id="totalMonthOfSecondaryEdu" style="width: 40px"> -->
 								<form:select path="totalMonthOfSecondaryEdu" id="totalMonthOfSecondaryEdu" style="width: 40px;">
-										<form:option value="">0</form:option>
+										<form:option value="0">0</form:option>
 										<form:option value="1">1</form:option>
 										<form:option value="2">2</form:option>
 										<form:option value="3">3</form:option>
@@ -344,10 +344,10 @@
 					</div>
 					<br />
 					<br />
-					<input type="button" value="Submit" class="button"
-						style="margin-left: 100px;" id="btnSubmit1" onclick="submitForm()"/>
-					<input type="submit" value="Save" class="button"
-						style="margin-left: 100px;"/>
+					<input type="submit" value="Submit" class="button"
+						style="margin-left: 100px;" id="btnSubmit1" />
+					<input type="button" value="Save" class="button"
+						style="margin-left: 100px;" onclick="saveForm()"/>
 					<input type="button" value="Back" class="button"
 						style="margin-left: 100px;" onclick="back()"/>
 						
@@ -357,8 +357,8 @@
 function back(){
 	window.history.go(-1);
 }
-function submitForm(){
-	var url="../submiteducationhistoryform";
+function saveForm(){
+	var url="../saveeducationhistoryform";
     document.educationhistoryform.action = url;
 	document.educationhistoryform.submit();
 	}
