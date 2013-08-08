@@ -136,6 +136,10 @@ h3.reply-title{
     font-size: 20px;
     font-weight: bold;
 }
+h1.pageTitle{
+	display: block;
+	margin: 0px 0px 20px 0px;
+}
 #footer {
 	float: left;
 	width: 1000px;

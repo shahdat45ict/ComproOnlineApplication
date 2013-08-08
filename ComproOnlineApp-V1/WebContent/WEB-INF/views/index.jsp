@@ -51,6 +51,7 @@ Soon after you have submitted your application, we will notify you of your preli
 	<li><a href="registration">Register</a></li>
 	<li><a href="admin/posts">Dashboard</a></li>
 	<li><a href="login">Log in</a></li>
+	<li><a href="application/personalinfo">personal info</a></li>
 </ul>
 </div>	
 </div>
