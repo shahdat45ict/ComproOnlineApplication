@@ -25,6 +25,14 @@
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+    <bean id="personalInfoService" class="mum.compro.onlineapp.PersonalInfoService">
+     <property name="personalInfoDao" ref="personalInfoDao" />
+	</bean>
+	
+	<bean id="personalInfoDao" class="mum.compro.onlineapp.PersonalInfoDAO" init-method="init">
+	   <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+		
 	<bean id="educationHistoryService" class="mum.compro.onlineapp.educationhistory.EducationHistoryService">
 	   <property name="educationHistoryDAO" ref="educationHistoryDAO" />
 	</bean>
@@ -47,6 +55,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>mum.compro.onlineapp.User</value> 
+				<value>mum.compro.onlineapp.PersonalInfo</value> 
 				<value>mum.compro.onlineapp.educationhistory.CollegeAttended</value> 
 				<value>mum.compro.onlineapp.educationhistory.EducationHistoryForm</value> 
 				<value>mum.compro.onlineapp.EnglishProficiency</value>
