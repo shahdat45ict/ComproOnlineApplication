@@ -51,6 +51,8 @@ Soon after you have submitted your application, we will notify you of your preli
 	<li><a href="registration">Register</a></li>
 	<li><a href="admin/posts">Dashboard</a></li>
 	<li><a href="login">Log in</a></li>
+	<li><a href="englishproficiency">English Proficiency</a></li>
+	<li><a href="englishproficiency/1">Update English Proficiency</a>
 </ul>
 </div>	
 </div>
