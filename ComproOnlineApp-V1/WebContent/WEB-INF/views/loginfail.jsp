@@ -27,6 +27,7 @@
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
+Your email or password was entered wrongly,try again.
 <form id="formLogin" action="login" method="post" class="cmxform">
 		<table>
 			<tr>

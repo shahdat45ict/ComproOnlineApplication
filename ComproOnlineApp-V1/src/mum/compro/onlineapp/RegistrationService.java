@@ -30,5 +30,15 @@ public class RegistrationService {
 		else
 			return 0;
 	}
+
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public User getUserbyEmail(String email) {
+		return userdao.getUserbyEmail( email);
+	}
+
+	/*public String getEmmailfromDatabase(String email) {
+		// TODO Auto-generated method stub
+		return userdao.getEmailfromDatabase(email);
+	}*/
 	
 }
