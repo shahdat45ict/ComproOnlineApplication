@@ -17,7 +17,7 @@
 
 
 	<mvc:annotation-driven />
-	<context:component-scan base-package="sessioninview" />
+	<context:component-scan base-package="mum.compro.onlineapp" />
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 

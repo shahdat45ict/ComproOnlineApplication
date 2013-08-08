@@ -17,21 +17,11 @@
 
 	<tx:annotation-driven transaction-manager="txManager" />
 
-	<bean id="blogService" class="sessioninview.BlogService">
+	<bean id="registrationService" class="mum.compro.onlineapp.RegistrationService">
 	   <property name="userdao" ref="userDAO" />
-	   <property name="postdao" ref="postDAO" />
-	   <property name="commentdao" ref="commentDAO" />
 	</bean>
 	
-	<bean id="userDAO" class="sessioninview.UserDAO" init-method="init">
-	   <property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	
-	<bean id="postDAO" class="sessioninview.PostDAO" init-method="init">
-	   <property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	
-	<bean id="commentDAO" class="sessioninview.CommentDAO">
+	<bean id="userDAO" class="mum.compro.onlineapp.UserDAO" init-method="init">
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
@@ -43,9 +33,7 @@
 		<!-- OR mapping files. -->
 		<property name="annotatedClasses">
 			<list>
-				<value>sessioninview.User</value> 
-				<value>sessioninview.Post</value>
-				<value>sessioninview.Comment</value>
+				<value>mum.compro.onlineapp.User</value> 
 			</list>
 		</property>
 	</bean>
@@ -54,7 +42,7 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost/test" />
+		<property name="url" value="jdbc:mysql://localhost/compro" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>

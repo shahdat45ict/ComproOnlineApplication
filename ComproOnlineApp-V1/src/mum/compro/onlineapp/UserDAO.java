@@ -13,10 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserDAO {
 	private SessionFactory sf;
 	public void init() {
-		Session session = sf.openSession();
-		Transaction tx = session.beginTransaction();
+		//Session session = sf.openSession();
+		//Transaction tx = session.beginTransaction();
 
-		User user = new User("Lincoln", "Datta", "lincolnbd_cuet@yahoo.com", "1", "123456");
+		//User user = new User("Lincoln", "Datta", "lincolnbd_cuet@yahoo.com", "1", "123456");
 /*		Post post1 = new Post("Test title1", "Test content1", "publish",
 				"05/19/2013");
 		Post post2 = new Post("Test title2", "Test content2", "publish",
@@ -31,9 +31,9 @@ public class UserDAO {
 		user.setComment(comment1);
         post1.setComment(comment1);*/
 		
-		session.persist(user);
-		tx.commit();
-		session.close();
+		//session.persist(user);
+		//tx.commit();
+		//session.close();
 	}
 
 	@Transactional(propagation = Propagation.SUPPORTS)

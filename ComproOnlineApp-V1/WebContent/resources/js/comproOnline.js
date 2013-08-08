@@ -45,4 +45,46 @@ $(function(){
 			email: "Please enter a valid email address"
 		}
 	});
+	// validate signup form on keyup and submit
+	 $("#formEnglishProficiency").validate({
+		rules: {
+			howWellReadWriteEnglish: "required",
+			howWellSpeakEnglish: "required",
+			howWellUnderstandSpokenEnglish: "required",
+			toeflScore:{
+				required:false,
+				number:true
+			},
+			greVerbalScore:{
+				required:false,
+				number:true
+			},
+			greQuantitativeScore:{
+				required:false,
+				number:true
+			},
+			greAnalyticalScore:{
+				required:false,
+				number:true
+			},
+			greVerbalPercentile:{
+				required:false,
+				range:[0,100]
+			},
+			greQuantitativePercentile:{
+				required:false,
+				range:[0,100]
+			},
+			greAnalyticalPercentile:{
+				required:false,
+				range:[0,100]
+			}
+				
+		},
+		messages: {
+			howWellReadWriteEnglish: "Please enter your read write english proficiency",
+			howWellSpeakEnglish: "Please enter your speak english proficiency",	
+			howWellUnderstandSpokenEnglish: "Please enter your understand spoken english proficiency"
+		}
+	});
 });
