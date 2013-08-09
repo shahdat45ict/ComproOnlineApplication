@@ -53,7 +53,7 @@ body {
 #header {
 	float: left;
 	width: 1000px;
-	height: 244px;
+	height: 210px;
 	margin-top: 20px;
 }
 
@@ -65,7 +65,7 @@ body {
 }
 
 .logo a {
-	color: #000000;
+	color: ##74B3EB;
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 30px;
@@ -77,13 +77,18 @@ body {
 }
 #wrapper_left {
 	float: left;
-	width: 960px;
+	width: 775px;
 	height: auto;
 	margin: 0;
 	padding: 35px 10px 10px 15px;
 	background-color:#FFFFFF;
+	font-size: 14px;
+	text-align: justify;
 }
-
+#wrapper_left p{
+	line-height: 20px;
+	margin-bottom: 10px;
+}
 #wrapper_left .post {
 	margin: 0 0 48px;
 	color: #333333;
@@ -128,6 +133,10 @@ a.title, h1.title {
 	clear: both;
 	text-decoration: none;	'
 }
+ h1.title {
+ 	display: block;
+ 	margin-bottom: 15px;
+ }
 h3.reply-title{
     display: block;
     margin: 15px 0 15px 0;
