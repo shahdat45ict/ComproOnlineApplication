@@ -29,14 +29,14 @@ public class User {
 	@Temporal(TemporalType.DATE)
 	private Date registered;
 	private String status;
-	
+
 
 	private static DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT,
 			Locale.US);
-	
+
 	public User() {
 	}
-	
+
 	public User(String firstName, String lastName, String email,
 			String status, String password) {
 		this.firstName = firstName;
@@ -106,5 +106,11 @@ public class User {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id=id;
 	}
 }
