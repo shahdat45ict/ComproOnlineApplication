@@ -33,6 +33,10 @@ public class EducationHistoryService {
 	public void submitEducationHistoryForm(EducationHistoryForm form) {
 		educationHistoryDAO.submitEducationHistoryForm(form);
 	}
+	@Transactional(propagation=Propagation.REQUIRES_NEW)	
+	public EducationHistoryForm getEducationHistoryFormByUser(User user) {
+		return educationHistoryDAO.getEducationHistoryFormByUser(user);
+	}
 
 //	@Transactional(propagation=Propagation.REQUIRES_NEW)
 //	public int checkUser(String email, String password) {

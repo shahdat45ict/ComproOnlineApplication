@@ -18,13 +18,17 @@
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
-You have successfully logged in as ${user} 
+ <h2>${user.firstName},welcome you!</h2> 
 </div>
 <div id="wrapper_right">
 <h3 class="widget-title">Meta</h3>
 <ul>
 	<li><a href="logout">log out</a></li>
 	<li><a href="changePassword">Change password</a></li>
+	<li><a href="application/educationhistoryform">Education History Form</a></li>
+	<li><a href="application/personalinfo">Personal Information</a>
+	<li><a href="englishproficiency">English Proficiency</a></li>
+	<li><a href="englishproficiency/1">Update English Proficiency</a>
 </ul>
 </div>	
 </div>

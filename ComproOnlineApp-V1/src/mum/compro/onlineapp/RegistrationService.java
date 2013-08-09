@@ -21,9 +21,14 @@ public class RegistrationService {
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)	
-	public void addNewUser(User user){
+	public Long addNewUser(User user){
 		//MailUtil.sendEmailTo(desAddress, subject, content);
-		userdao.create(user);
+		 return userdao.create(user);
+	}
+	@Transactional(propagation=Propagation.REQUIRES_NEW)	
+	public void activated(long userId){
+		//MailUtil.sendEmailTo(desAddress, subject, content);
+		userdao.activated(userId);
 	}
 
 	@Transactional(propagation=Propagation.REQUIRES_NEW)

@@ -40,9 +40,10 @@
 		</div>
 		<div id="wrapper_middle">
 			<div id="wrapper_left">
-				<%-- <form action="../saveeducationhistoryform" method="post"
+				<%-- <form action="application/saveeducationhistoryform" method="post"
 					id="educationhistoryform" class="cmxform" name="educationhistoryform"> --%>
-					<form:form action="../submiteducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
+					<form:form action="submiteducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
+					<form:hidden path="educationHistoryId"/>
 					<div class="header">Educational History:</div>
 					<div class="box">
 
@@ -358,7 +359,7 @@ function back(){
 	window.history.go(-1);
 }
 function saveForm(){
-	var url="../saveeducationhistoryform";
+	var url="saveeducationhistoryform";
     document.educationhistoryform.action = url;
 	document.educationhistoryform.submit();
 	}

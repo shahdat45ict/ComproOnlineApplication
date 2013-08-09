@@ -28,7 +28,7 @@ public class User {
 	private String applicantId;
 	@Temporal(TemporalType.DATE)
 	private Date registered;
-	private String status;
+	private String status="unactivated";
 	
 
 	private static DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT,
@@ -37,6 +37,14 @@ public class User {
 	public User() {
 	}
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public User(String firstName, String lastName, String email,
 			String status, String password) {
 		this.firstName = firstName;
