@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="${validatorCssURL}" />  
 <d:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
 <d:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
-<d:url value="/resources/js/comproOnline.js" var="jsURL" />
+<d:url value="/resources/js/personal-info.js" var="jsURL" />
 <script type="text/javascript" src="${jqueryURL}"></script>
 <script type="text/javascript" src="${validatorURL}"></script>
 <script type="text/javascript" src="${jsURL}"></script>
