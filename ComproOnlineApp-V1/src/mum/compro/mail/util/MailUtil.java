@@ -21,19 +21,12 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public abstract class MailUtil {
 
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		User user = new User();
-		user.setFirstName("Yanlong");
-		user.setLastName("Wang");
-		user.setEmail("wangyanlong0107@gmail.com");
-	}
 
 	public static void sendEmailTo(final String desAddress,final String subject,final String content) {
 		new Thread(new Runnable() {
 			public void run() {
 				Properties props = new Properties();
-				props.put("mail.smtp.host", "smtp.163.com");
+				props.put("mail.smtp.host", "smtp.gmail.com");
 				props.put("mail.smtp.socketFactory.port", "465");
 				props.put("mail.smtp.socketFactory.class",
 						"javax.net.ssl.SSLSocketFactory");
@@ -43,14 +36,14 @@ public abstract class MailUtil {
 				Session session = Session.getDefaultInstance(props,
 					new javax.mail.Authenticator() {
 						protected PasswordAuthentication getPasswordAuthentication() {
-							return new PasswordAuthentication("wangyanlong0107@163.com","wozhiaiziji");
+							return new PasswordAuthentication("ComproTitan@gmail.com","compro123");
 						}
 					});
 		 
 				try {
 		 
 					Message message = new MimeMessage(session);
-					message.setFrom(new InternetAddress("wangyanlong0107@163.com"));
+					message.setFrom(new InternetAddress("ComproTitan@gmail.com"));
 					message.setRecipients(Message.RecipientType.TO,
 							InternetAddress.parse(desAddress));
 					message.setSubject(subject);
@@ -59,7 +52,7 @@ public abstract class MailUtil {
 		 
 					Transport.send(message);
 					System.out.println("TO:" + desAddress);
-					System.out.println("from:wangyanlong0107@163.com" );
+					System.out.println("from:ComproTitan@gmail.com" );
 					System.out.println("Done");
 		 
 				} catch (MessagingException e) {

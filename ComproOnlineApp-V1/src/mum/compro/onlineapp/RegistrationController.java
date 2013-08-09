@@ -35,7 +35,7 @@ public class RegistrationController {
 			String fName = request.getParameter("firstName");
 			MailUtil.sendEmailTo(email, "Your account is created", "Dear "
 					+ fName
-					+ ", Please activate your account " + url);
+					+ ", Please activate your account " +  url);// 
 			return "redirect:/login";
 		} else
 			return "registFail";
