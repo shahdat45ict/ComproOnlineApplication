@@ -14,11 +14,20 @@
 <div id="wrapper_in">
 <div id="header">
 <span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
-<img src="/ComproOnlineApplication/resources/images/berries.jpg" width="1000" height="198" />
+<img src="/ComproOnlineApplication/resources/images/header.png" width="1000" height="160" />
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
-<%-- 	<c:forEach var="post" items="${posts}">	
+<div id="wrapper_right">
+<h3 class="widget-title">Meta</h3>
+<ul>
+	<li><a href="registration">Register</a></li>
+	
+	<li><a href="login">Log in</a></li>
+</ul>
+</div>	
+<%-- 	
+	<c:forEach var="post" items="${posts}">	
 		<div class="post">
 			<a href="details/${post.id}" class="title">${post.title}</a>
 			<p class="content">
@@ -26,7 +35,8 @@
 			</p>
 			<a href="details/${post.id}">read more</a>
 		</div>
-	</c:forEach> --%>
+	</c:forEach> 
+--%>
 <p><b>COMPUTER PROFESSIONAL PROGRAM</b></p>
 <p><b>MASTER OF SCIENCE IN COMPUTER SCIENCE</b></p>	
 <p><b>MAHARISHI UNIVERSITY OF MANAGEMENT, USA</b></p><br /><br />	
@@ -45,17 +55,6 @@ Soon after you have submitted your application, we will notify you of your preli
 
 <p>Attention: To expedite your application, we strongly recommend that you now obtain your college transcripts and diplomas (and GRE and TOEFL scores if you have taken these tests) so you will be prepared to immediately submit these items when the University requests them. Please do not submit these documents or your resume (curriculum vitae) until the University requests them. See sample resume.</p>
 </div>
-<div id="wrapper_right">
-<h3 class="widget-title">Meta</h3>
-<ul>
-	<li><a href="registration">Register</a></li>
-	<li><a href="educationhistoryform/educationhistoryform/">Education History Form</a></li>
-	<li><a href="login">Log in</a></li>
-	<li><a href="application/personalinfo">Personal Information</a>
-	<li><a href="englishproficiency">English Proficiency</a></li>
-	<li><a href="englishproficiency/1">Update English Proficiency</a>
-</ul>
-</div>	
 </div>
 <div id="footer">
   <div id="colophon">

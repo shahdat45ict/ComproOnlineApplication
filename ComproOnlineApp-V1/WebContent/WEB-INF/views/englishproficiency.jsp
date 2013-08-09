@@ -29,9 +29,8 @@
 				<img src="/ComproOnlineApplication/resources/images/berries.jpg"	width="1000" height="198" />
 			</div>
 			<div id="wrapper_middle">
-				<div id="wrapper_left">	
-				<%System.out.println(request.getParameter("id")); %>				  	
-					<form action="/ComproOnlineApplication/englishproficiency${englishProficiency.id!=null?'/1':''}" method="post"	id="formEnglishProficiency" class="cmxform">
+				<div id="wrapper_left">								  	
+					<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post"	id="formEnglishProficiency" class="cmxform">
 						<div class="header">English Proficiency</div>
 						<div class="box">
 							<span class="subHeader">English Fluency</span>

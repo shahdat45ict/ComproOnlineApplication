@@ -17,8 +17,7 @@ public class EnglishProficiencyService {
 
 	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly=true)
 	public EnglishProficiency getEnglishProficiency(long id) {
-		EnglishProficiency englishProficiency = englishProficiencyDao.load(id);
-		Hibernate.initialize(englishProficiency.getHowWellReadWriteEnglish());
+		EnglishProficiency englishProficiency = englishProficiencyDao.load(id);	
 		return englishProficiency;
 	}
 

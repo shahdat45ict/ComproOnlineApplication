@@ -2,10 +2,11 @@ package mum.compro.onlineapp.educationhistory;
 
 import java.util.List;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
+import mum.compro.onlineapp.User;
+
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,6 +58,18 @@ public class EducationHistoryDAO {
 	@Transactional
 	public EducationHistoryForm getEducationHistoryFormById(long id) {
 		return (EducationHistoryForm) sf.getCurrentSession().get(EducationHistoryForm.class, id);
+	}
+	
+	@Transactional
+	public EducationHistoryForm getEducationHistoryFormByUser(User user) {
+		Criteria criteria = sf.getCurrentSession().createCriteria(EducationHistoryForm.class);
+		criteria.add(Restrictions.eq("user", user));
+		List list = criteria.list();
+		if(list.size() == 0){
+			return new EducationHistoryForm();
+		}else{
+			return (EducationHistoryForm)list.get(0);
+		}
 	}
 	
 //	@Transactional

@@ -31,8 +31,8 @@ public class UserDAO {
 		this.sf = sessionFactory;
 	}
 
-	public void create(User user) {
-		sf.getCurrentSession().persist(user);
+	public Long create(User user) {
+		return (Long)sf.getCurrentSession().save(user);
 	}
 
 	@Transactional
@@ -43,9 +43,10 @@ public class UserDAO {
 	@Transactional
 	public int getUser(String email, String password) {
 		Query query = (Query) sf.getCurrentSession().createQuery(
-				"from User where email = :email and password = :password");
+				"from User where email = :email and password = :password and status = :status");
 		query.setParameter("email", email);
 		query.setParameter("password", password);
+		query.setParameter("status", "activated");
 		@SuppressWarnings("unchecked")
 		List<User> users = query.list();
 		return users.size();
@@ -82,6 +83,14 @@ public class UserDAO {
 		return (User) sf.getCurrentSession()
 				.createQuery("from User where email = :email")
 				.setParameter("email", email).uniqueResult();
+	}
+	@Transactional
+	public void activated(long userid) {
+		
+		Session currentSession = sf.getCurrentSession();
+		User user = (User)currentSession.get(User.class, userid);
+		user.setStatus("activated");
+		currentSession.saveOrUpdate(user);
 	}
 	
 	
