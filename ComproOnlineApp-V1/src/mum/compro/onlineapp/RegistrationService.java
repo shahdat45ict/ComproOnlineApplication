@@ -1,6 +1,7 @@
 package mum.compro.onlineapp;
 
 import mum.compro.mail.util.MailUtil;
+import mum.compro.onlineapp.application.ApplicationDAO;
 
 import org.hibernate.Hibernate;
 import org.springframework.transaction.annotation.Propagation;
@@ -8,9 +9,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 public class RegistrationService {
 	private UserDAO userdao;
+	private ApplicationDAO applicationdao;
+	private PersonalInfoDAO personalInfoDao;
+	private EnglishProficiencyDAO englishProficiencyDao;
 
 	public void setUserdao(UserDAO userdao) {
 		this.userdao = userdao;
+	}
+	
+	public void setApplicationdao(ApplicationDAO applicationdao) {
+		this.applicationdao = applicationdao;
+	}	
+	
+	public void setPersonalInfoDao(PersonalInfoDAO personalInfoDao) {
+		this.personalInfoDao = personalInfoDao;
+	}
+	
+	public void setEnglishProficiencyDao(EnglishProficiencyDAO englishProficiencyDao) {
+		this.englishProficiencyDao = englishProficiencyDao;
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly=true)
@@ -23,7 +39,15 @@ public class RegistrationService {
 	@Transactional(propagation=Propagation.REQUIRES_NEW)	
 	public Long addNewUser(User user){
 		//MailUtil.sendEmailTo(desAddress, subject, content);
-		 return userdao.create(user);
+		PersonalInfo personalInfo = new PersonalInfo();
+		personalInfoDao.create(personalInfo);
+		
+		EnglishProficiency englishProficiency = new EnglishProficiency();
+		englishProficiencyDao.create(englishProficiency);
+		
+		applicationdao.create(user, personalInfo, englishProficiency);
+		
+		return userdao.create(user);
 	}
 	@Transactional(propagation=Propagation.REQUIRES_NEW)	
 	public void activated(long userId){

@@ -1,45 +1,61 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:url value="/resources/css/style.css" var="cssURL" />  
-<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />  
-<title>Compro Online Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Application</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
 </head>
 <body>
-<div id="wrapper">
-<div id="wrapper_in">
 <div id="header">
-<span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
-<img src="/ComproOnlineApplication/resources/images/berries.jpg" width="1000" height="198" />
+	<span class="logo"><a href="/ComproOnlineApplication"></a></span>
+	<img src="/ComproOnlineApplication/resources/images/header.png" width="1000" height="198" />
 </div>
-<div id="wrapper_middle">
-<div id="wrapper_left">
- <h2>${user.firstName},welcome you!</h2> 
-</div>
-<div id="wrapper_right">
-<h3 class="widget-title">Meta</h3>
-<ul>
-	<li><a href="logout">log out</a></li>
-	<li><a href="changePassword">Change password</a></li>
-	<li><a href="application/educationhistoryform">Education History Form</a></li>
-	<li><a href="application/personalinfo">Personal Information</a>
-	<li><a href="englishproficiency">English Proficiency</a></li>
-	<li><a href="englishproficiency/1">Update English Proficiency</a>
-</ul>
-</div>	
+<div id="accordion">
+<h3>Instruction</h3>
+  <div>
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+  <h3>Personal Information</h3>
+  <div>
+ 	  <jsp:include page="/WEB-INF/views/personalinfo.jsp" flush="true"></jsp:include>
+  </div>
+  <h3>English Proficiency</h3>
+  <div>
+ 	  <jsp:include page="/WEB-INF/views/englishproficiency.jsp" flush="true"></jsp:include>
+  </div>
+  <h3>Education History</h3>
+  <div>
+ 	  <jsp:include page="/WEB-INF/views/educationhistoryform.jsp" flush="true"></jsp:include>
+  </div>
+  
 </div>
 <div id="footer">
-  <div id="colophon">
-	  <div id="site-info">
-	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
-	  </div>
-  </div>
-</div>
-</div>	
-</div>
+			<div id="colophon">
+				<div id="site-info">
+					<a rel="home" title="Compro Online Application"
+						href="/ComproOnlineApplication">Compro Online Application</a>
+				</div>
+			</div>
+		</div>
 </body>
 </html>

@@ -164,4 +164,5 @@ public class EnglishProficiency {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
+	
 }

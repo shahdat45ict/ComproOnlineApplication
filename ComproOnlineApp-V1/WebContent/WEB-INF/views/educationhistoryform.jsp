@@ -6,11 +6,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:url value="/resources/css/style.css" var="cssURL" />
-<c:url value="/resources/css/style.css" var="validatorCssURL" />
-<c:url value="/resources/css/educationhistory.css"
-	var="educationhistory" />
-<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="${validatorCssURL}" />
 <link rel="stylesheet" type="text/css" media="screen"
@@ -18,35 +13,18 @@
 <c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
 <c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
 <c:url value="/resources/js/comproOnline.js" var="jsURL" />
-<c:url value="/resources/js/appCheck.js" var="appCheck" />
-<c:url value="/resources/js/appLogic.js" var="appLogic" />
 <c:url value="/resources/js/educationhistoryvalidator.js" var="validator" />
-<script type="text/javascript" src="${jqueryURL}"></script>
-<script type="text/javascript" src="${validatorURL}"></script>
-<script type="text/javascript" src="${jsURL}"></script>
-<script type="text/javascript" src="${appCheck}"></script>
-<script type="text/javascript" src="${appLogic}"></script>
-<script type="text/javascript" src="${validator}"></script>
-<title>Compro Online Application - Education History Form</title>
 </head>
 <body>
 
 <div id="wrapper">
 	<div id="wrapper_in">
-		<div id="header">
-			<span class="logo"><a href="/ComproOnlineApplication">Education History Form</a></span>
-			<img src="/ComproOnlineApplication/resources/images/berries.jpg"
-				width="1000" height="198" />
-		</div>
 		<div id="wrapper_middle">
 			<div id="wrapper_left">
-				<%-- <form action="application/saveeducationhistoryform" method="post"
-					id="educationhistoryform" class="cmxform" name="educationhistoryform"> --%>
-					<form:form action="submiteducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
+					<%String url = request.getContextPath() + "/application/saveeducationhistoryform"; %>
+					<form:form action="<%=url %>" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
 					<form:hidden path="educationHistoryId"/>
-					<div class="header">Educational History:</div>
 					<div class="box">
-
 						<!-- //Changes by Anupama Start-->
 
 						<span class="subHeader">High School/Secondary Level
@@ -332,58 +310,25 @@
 								<br />
 								</td>
 							</tr>
-							<!--</th></tr>	<tr>
-		<td>
-			Years: <input type="text" name="PostSecondaryYears" id="PostSecondaryYears" 
-			value="5" size="2"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			Months: <input type="text" name="PostSecondaryMonths" id="PostSecondaryMonths" 
-			value="0" size="2"/>
-		</td>
-	</tr>-->
 						</table>
 						<br />
 					</div>
 					<br />
 					<br />
-					<input type="submit" value="Submit" class="button"
-						style="margin-left: 100px;" id="btnSubmit1" />
-					<input type="button" value="Save" class="button"
-						style="margin-left: 100px;" onclick="saveForm()"/>
-					<input type="button" value="Back" class="button"
-						style="margin-left: 100px;" onclick="back()"/>
-						
+					<input type="submit" value="Save" class="button" style="margin-left: 100px;"/>
 				</form:form>
-					
 <script type="text/javascript">
-function back(){
-	window.history.go(-1);
-}
 function saveForm(){
-	var url="saveeducationhistoryform";
-    document.educationhistoryform.action = url;
+	//var url="saveeducationhistoryform";
+    //document.educationhistoryform.action = url;
 	document.educationhistoryform.submit();
 	}
-/* $(function(){
-	$("#btnSubmit").click(function(){		
-		 alert("hh");
-		var url="../submiteducationhistoryform";
-	    document.educationhistoryform.action = url;
-		document.educationhistoryform.submit(); 
-	});
-}); */
 
 </script>
 			</div>
 			<div id="wrapper_right"></div>
 		</div>
-		<div id="footer">
-			<div id="colophon">
-				<div id="site-info">
-					<a rel="home" title="Compro Online Application"
-						href="/ComproOnlineApplication">Compro Online Application</a>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </div>
 </body>

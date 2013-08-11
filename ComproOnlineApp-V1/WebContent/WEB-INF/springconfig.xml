@@ -19,19 +19,28 @@
 
 	<bean id="registrationService" class="mum.compro.onlineapp.RegistrationService">
 	   <property name="userdao" ref="userDAO" />
+	   <property name="applicationdao" ref="applicationDAO" />
+	   <property name="personalInfoDao" ref="personalInfoDAO" />
+	   <property name="englishProficiencyDao" ref="englishProficiencyDAO" />	   
 	</bean>
+	
 	<bean id="passwordService" class="mum.compro.onlineapp.PasswordService">
 	   <property name="userdao" ref="userDAO" />
 	</bean>
+	
 	<bean id="userDAO" class="mum.compro.onlineapp.UserDAO" init-method="init">
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	<bean id="applicationDAO" class="mum.compro.onlineapp.application.ApplicationDAO" init-method="init">
+	   <property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
+	
     <bean id="personalInfoService" class="mum.compro.onlineapp.PersonalInfoService">
-     <property name="personalInfoDao" ref="personalInfoDao" />
+     <property name="personalInfoDao" ref="personalInfoDAO" />
 	</bean>
 	
-	<bean id="personalInfoDao" class="mum.compro.onlineapp.PersonalInfoDAO" init-method="init">
+	<bean id="personalInfoDAO" class="mum.compro.onlineapp.PersonalInfoDAO" init-method="init">
 	   <property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 		
@@ -48,6 +57,8 @@
  	<bean id="englishProficiencyDAO" class="mum.compro.onlineapp.EnglishProficiencyDAO" init-method="init">
    	 	<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+		
 	<!-- Hibernate SessionFactory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -57,6 +68,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>mum.compro.onlineapp.User</value> 
+				<value>mum.compro.onlineapp.application.Application</value>
 				<value>mum.compro.onlineapp.PersonalInfo</value> 
 				<value>mum.compro.onlineapp.educationhistory.CollegeAttended</value> 
 				<value>mum.compro.onlineapp.educationhistory.EducationHistoryForm</value> 

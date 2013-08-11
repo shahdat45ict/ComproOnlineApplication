@@ -48,7 +48,7 @@ public class LoginLogoutController {
 			//session.setAttribute("user", user);
 	        ModelAndView modelAndView = new ModelAndView();  
 	        modelAndView.addObject("user", email);
-			return "application";
+			return "redirect:/application";
 		}
 		else
 			return "/loginfail";

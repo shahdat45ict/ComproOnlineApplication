@@ -38,13 +38,13 @@ public class EnglishProficiencyController {
 	@RequestMapping(value = "/englishproficiency", method = RequestMethod.POST)
 	public String englishProficiency(EnglishProficiency englishProficiency) {
 		englishProficiencyService.addNewEnglishProficiency(englishProficiency);
-		return "redirect:/";
+		return "redirect:/application";
 	}	
 
 	@RequestMapping(value="/englishproficiency/{id}", method=RequestMethod.POST)
 	public String update(EnglishProficiency englishProficiency, @PathVariable int id) {
 		englishProficiencyService.updateEnglishProficiency(englishProficiency);
-		return "redirect:/";
+		return "redirect:/application";
 	}
 
 }

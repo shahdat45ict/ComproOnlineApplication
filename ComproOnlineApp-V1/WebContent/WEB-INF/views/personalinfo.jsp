@@ -6,32 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<d:url value="/resources/css/style.css" var="cssURL" />
-<d:url value="/resources/css/style.css" var="validatorCssURL" />  
-<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />
-<link rel="stylesheet" type="text/css" media="screen" href="${validatorCssURL}" />  
-<d:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
-<d:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
-<d:url value="/resources/js/personal-info.js" var="jsURL" />
-<script type="text/javascript" src="${jqueryURL}"></script>
-<script type="text/javascript" src="${validatorURL}"></script>
-<script type="text/javascript" src="${jsURL}"></script>
-<title>Compro Online Application - Personal Information</title>
-
 </head>
+<body>
 <div id="wrapper">
 <div id="wrapper_in">
-<div id="header">
-<span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
-<img src="/ComproOnlineApplication/resources/images/berries.jpg" width="1000" height="198" />
-</div>
 <div id="wrapper_middle">
 <div id="wrapper_left">
-<h1 class="pageTitle">Personal Information</h1>
-
-	
-
-    <form action="personalinfo<d:if test='${not empty personalInfo.id}'>/${personalInfo.id}</d:if>" method="post" id="formPersonalInfo" class="cmxform">
+    <form action="application/personalinfo" method="post" id="formPersonalInfo" class="cmxform">
 		<table>
 			<tr>
 				<td><label for="txtFirstName">First Name(s):</label></td>
@@ -154,18 +135,10 @@
 		</table>
 		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />		
 	</form>
-
 </div>
 <div id="wrapper_right">
 
 </div>	
-</div>
-<div id="footer">
-  <div id="colophon">
-	  <div id="site-info">
-	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
-	  </div>
-  </div>
 </div>
 </div>	
 </div>

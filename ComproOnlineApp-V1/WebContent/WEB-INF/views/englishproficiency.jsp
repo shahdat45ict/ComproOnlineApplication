@@ -5,29 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:url value="/resources/css/style.css" var="cssURL" />
-<c:url value="/resources/css/style.css" var="validatorCssURL" />
-<c:url value="/resources/css/blueWorld.css" var="mumCssURL" />
-<link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="${validatorCssURL}" />
 <c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
 <c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
 <c:url value="/resources/js/comproOnline.js" var="jsURL" />
-<script type="text/javascript" src="${jqueryURL}"></script>
-<script type="text/javascript" src="${validatorURL}"></script>
-<script type="text/javascript" src="${jsURL}"></script>
-<link rel="stylesheet" type="text/css" href="${mumCssURL}" />
 <title>Compro Online Application - English Proficiency</title>
 
 </head>
 <body>
 	<div id="wrapper">
 		<div id="wrapper_in">
-			<div id="header">
-				<span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
-				<img src="/ComproOnlineApplication/resources/images/berries.jpg"	width="1000" height="198" />
-			</div>
 			<div id="wrapper_middle">
 				<div id="wrapper_left">								  	
 					<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post"	id="formEnglishProficiency" class="cmxform">
@@ -162,13 +148,6 @@
 
 				</div>
 				<div id="wrapper_right"></div>
-			</div>
-			<div id="footer">
-				<div id="colophon">
-					<div id="site-info">
-						<a rel="home" title="Compro Online Application"	href="/ComproOnlineApplication">Compro Online Application</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

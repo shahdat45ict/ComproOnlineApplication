@@ -1,20 +1,18 @@
 package mum.compro.onlineapp;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import mum.compro.onlineapp.application.Application;
 
 @Entity
 public class User {
@@ -25,10 +23,13 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private String applicantId;
 	@Temporal(TemporalType.DATE)
 	private Date registered;
 	private String status="unactivated";
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Application application;
 	
 
 	private static DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT,
@@ -86,14 +87,6 @@ public class User {
 		this.password = password;
 	}
 
-	public String getApplicantId() {
-		return applicantId;
-	}
-
-	public void setApplicantId(String applicantId) {
-		this.applicantId = applicantId;
-	}
-
 	public Date getRegistered() {
 		return registered;
 	}
@@ -115,4 +108,14 @@ public class User {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public Application getApplication() {
+		return application;
+	}
+
+	public void setApplication(Application application) {
+		this.application = application;
+	}
+	
+	
 }
