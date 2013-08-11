@@ -12,7 +12,7 @@
 <div id="wrapper_in">
 <div id="wrapper_middle">
 <div id="wrapper_left">
-    <form action="application/personalinfo" method="post" id="formPersonalInfo" class="cmxform">
+    <form action="application/personalinfo<d:if test='${not empty personalInfo.id}'>/${personalInfo.id}</d:if>" method="post" id="formPersonalInfo" class="cmxform">
 		<table>
 			<tr>
 				<td><label for="txtFirstName">First Name(s):</label></td>

@@ -41,11 +41,11 @@ public class PersonalInfoController {
 		return "redirect:/application";
 	}
 
-/*	@RequestMapping(value = "/application/personalinfo/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "/application/personalinfo/{id}", method = RequestMethod.POST)
 	public String update(PersonalInfo personalInfo, @PathVariable long id,
 			@RequestParam("month") String month,
 			@RequestParam("day") String day, @RequestParam("year") String year) {
 		personalInfoService.updatePersonalInfo(personalInfo, month, day, year);
 		return "redirect:/application";
-	}*/
+	}
 }
