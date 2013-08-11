@@ -3,6 +3,7 @@ package mum.compro.onlineapp;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import mum.compro.onlineapp.application.Application;
 import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
 import mum.compro.onlineapp.educationhistory.EducationHistoryService;
 
@@ -34,10 +35,11 @@ public class ApplicationController {
 		User user = (User) session.getAttribute("user");
 		if (user != null) {
 			// personal information
+			Application application = user.getApplication();			
 			long id = user.getId();
-			PersonalInfo personalInfo = personalInfoService.getPersonalInfo(id);
+			PersonalInfo personalInfo = personalInfoService.getPersonalInfo(application.getPersonalInfo().getId());
 			if (personalInfo != null)
-				model.addAttribute("personalInfo", personalInfoService.getPersonalInfo(1));
+				model.addAttribute("personalInfo", personalInfo);
 			model.addAttribute("countryList", personalInfoService.getAllCountryList());
 
 			// english proficiency

@@ -6,6 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<d:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
+<d:url value="/resources/js/personal-info.js" var="jsURL" />
+<script type="text/javascript" src="${validatorURL}"></script>
+<script type="text/javascript" src="${jsURL}"></script>
 </head>
 <body>
 <div id="wrapper">
