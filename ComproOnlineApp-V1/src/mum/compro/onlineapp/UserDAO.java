@@ -1,6 +1,5 @@
 package mum.compro.onlineapp;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -23,7 +22,19 @@ public class UserDAO {
 	 */
 
 	public void init() {
-		
+		Session session = sf.openSession();
+		 Transaction tx = session.beginTransaction();
+		  
+		  User admin=new  User("System", "Admin", "systemadmin@mum.com", "activated", "123456", UserType.Administrator); 
+		  User adst1=new  User("Admission", "Staff", "admissionstaff1@mum.com", "activated", "123456", UserType.AdmissionStaff);
+		  User adst2=new  User("Admission", "Staff", "admissionstaff2@mum.com", "activated", "123456", UserType.AdmissionStaff);
+		  User adst3=new  User("Admission", "Staff", "admissionstaff3@mum.com", "activated", "123456", UserType.AdmissionStaff);
+		  session.persist(admin);
+		  session.persist(adst1);
+		  session.persist(adst2);
+		  session.persist(adst3);
+		  tx.commit();
+		  session.close();
 	}
 
 	@Transactional(propagation = Propagation.SUPPORTS)
@@ -89,6 +100,7 @@ public class UserDAO {
 		
 		Session currentSession = sf.getCurrentSession();
 		User user = (User)currentSession.get(User.class, userid);
+		user.setUserType(UserType.Applicant);
 		user.setStatus("activated");
 		currentSession.saveOrUpdate(user);
 	}

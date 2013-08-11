@@ -26,6 +26,7 @@ public class User {
 	@Temporal(TemporalType.DATE)
 	private Date registered;
 	private String status="unactivated";
+	private UserType userType;
 	
 	@OneToOne
 	@PrimaryKeyJoinColumn
@@ -47,12 +48,13 @@ public class User {
 	}
 
 	public User(String firstName, String lastName, String email,
-			String status, String password) {
+			String status, String password, UserType userType) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.status = status;
 		this.password = password;
+		this.userType = userType;
 	}
 
 	public String getFirstName() {
@@ -107,6 +109,14 @@ public class User {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
 	}
 
 	public Application getApplication() {

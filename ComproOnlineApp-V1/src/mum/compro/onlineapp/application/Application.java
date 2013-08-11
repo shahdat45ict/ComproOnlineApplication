@@ -12,6 +12,7 @@ import org.hibernate.annotations.Parameter;
 import mum.compro.onlineapp.EnglishProficiency;
 import mum.compro.onlineapp.PersonalInfo;
 import mum.compro.onlineapp.User;
+import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
 
 @Entity
 public class Application {
@@ -32,9 +33,8 @@ public class Application {
 	@OneToOne
 	private EnglishProficiency englishProficiency;
 	
-/*	@OneToOne
-	@PrimaryKeyJoinColumn
-	private EducationHistoryForm educationHistoryForm;*/
+	@OneToOne
+	private EducationHistoryForm educationHistoryForm;
 	
 	public Application() {
 	}
