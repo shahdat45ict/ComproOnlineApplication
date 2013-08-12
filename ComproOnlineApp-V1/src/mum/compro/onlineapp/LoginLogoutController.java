@@ -53,4 +53,9 @@ public class LoginLogoutController {
 		} else
 			return "redirect:/loginfail";
 	}
+	
+	@RequestMapping(value = "/loginfail", method = RequestMethod.GET)
+	public String loginfail() {
+		return "loginfail";
+	}
 }
