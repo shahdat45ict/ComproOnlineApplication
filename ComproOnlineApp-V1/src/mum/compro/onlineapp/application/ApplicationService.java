@@ -1,6 +1,7 @@
 package mum.compro.onlineapp.application;
 
 import java.text.ParseException;
+import java.util.List;
 
 import mum.compro.onlineapp.PersonalInfo;
 import mum.compro.onlineapp.User;
@@ -24,4 +25,22 @@ public class ApplicationService {
 	public void submitApplication(User user) {		
 		applicationDao.submitApplication(user);
 	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly = true)
+	public List<Application> getSubmittedApplications() {
+		List<Application> applications = applicationDao.getSubmittedApplications();
+		return applications;
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly = true)
+	public List<Application> getUnSubmittedApplications() {
+		List<Application> applications = applicationDao.getUnSubmittedApplications();
+		return applications;
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly = true)
+	public Application getApplication(long id){
+		return applicationDao.getApplication(id);
+	}
+	
 }

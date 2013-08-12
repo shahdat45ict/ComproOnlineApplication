@@ -25,9 +25,16 @@
 <div id="wrapper_right">
 <h3 class="widget-title">Meta</h3>
 <ul>
-	<li><a href="registration">Register</a></li>
-	
-	<li><a href="login">Log in</a></li>
+<%
+  Object o = request.getAttribute("user");
+  if(o == null){
+ %>
+  <li><a href="registration">Register</a></li>
+  <li><a href="login">Log in</a></li>
+ <%}else{ %>
+  <li><a href="application">Application</a></li>
+  <li><a href="logout">Log out</a></li>
+ <%} %>
 </ul>
 </div>
 </div>

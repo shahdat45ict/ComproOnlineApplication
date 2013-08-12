@@ -10,6 +10,7 @@ import mum.compro.onlineapp.educationhistory.EducationHistoryService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -79,6 +80,13 @@ public class ApplicationController {
 		User user = (User) session.getAttribute("user");
 		applicationService.submitApplication(user);
 		return "redirect:/application";
+	}
+	
+	@RequestMapping(value = "/application-detail/{id}", method = RequestMethod.GET)
+	public String applicationDetail(@PathVariable long id, Model model) {
+		Application application = applicationService.getApplication(id);
+		model.addAttribute("application", application);
+		return "applicationdetail";
 	}
 
 }
