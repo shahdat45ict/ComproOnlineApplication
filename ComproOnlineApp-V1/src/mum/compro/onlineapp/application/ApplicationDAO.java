@@ -3,6 +3,7 @@ package mum.compro.onlineapp.application;
 import mum.compro.onlineapp.EnglishProficiency;
 import mum.compro.onlineapp.PersonalInfo;
 import mum.compro.onlineapp.User;
+import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
 
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Propagation;
@@ -24,8 +25,13 @@ public class ApplicationDAO {
 		this.sf = sessionFactory;
 	}
 	
-	public Long create(User user, PersonalInfo personalInfo, EnglishProficiency englishProficiency) {
-		Application application = new Application("un-submitted", "undetermined", user, personalInfo, englishProficiency);
+	public Long create(User user, PersonalInfo personalInfo, EnglishProficiency englishProficiency, EducationHistoryForm educationHistoryForm) {
+		Application application = new Application("undetermined", "un-submitted", user, personalInfo, englishProficiency, educationHistoryForm);
 		return (Long)sf.getCurrentSession().save(application);
+	}
+	
+	public void submitApplication(User user){
+		user.getApplication().setStatus("submitted");
+		sf.getCurrentSession().saveOrUpdate(user.getApplication());
 	}
 }

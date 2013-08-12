@@ -26,7 +26,7 @@
 <div id="wrapper_in">
 <div id="header">
 <span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
-<img src="/ComproOnlineApplication/resources/images/berries.jpg" width="1000" height="198" />
+<img src="/ComproOnlineApplication/resources/images/header.png" width="1000" height="160" />
 </div>
 <div id="wrapper_middle">
 <div id="wrapper_left">

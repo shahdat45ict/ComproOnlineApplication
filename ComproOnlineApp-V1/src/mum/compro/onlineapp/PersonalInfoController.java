@@ -24,7 +24,7 @@ public class PersonalInfoController {
 			PersonalInfo personalInfo = personalInfoService.getPersonalInfo(id);
 			if (personalInfo != null)
 				model.addAttribute("personalInfo",
-						personalInfoService.getPersonalInfo(1));
+						personalInfoService.getPersonalInfo(id));
 			model.addAttribute("countryList",
 					personalInfoService.getAllCountryList());
 			return "personalinfo";

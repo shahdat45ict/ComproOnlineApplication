@@ -2,6 +2,8 @@ package mum.compro.onlineapp;
 
 import mum.compro.mail.util.MailUtil;
 import mum.compro.onlineapp.application.ApplicationDAO;
+import mum.compro.onlineapp.educationhistory.EducationHistoryDAO;
+import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
 
 import org.hibernate.Hibernate;
 import org.springframework.transaction.annotation.Propagation;
@@ -12,6 +14,8 @@ public class RegistrationService {
 	private ApplicationDAO applicationdao;
 	private PersonalInfoDAO personalInfoDao;
 	private EnglishProficiencyDAO englishProficiencyDao;
+	private EducationHistoryDAO educationHistoryDao;
+
 
 	public void setUserdao(UserDAO userdao) {
 		this.userdao = userdao;
@@ -29,6 +33,10 @@ public class RegistrationService {
 		this.englishProficiencyDao = englishProficiencyDao;
 	}
 	
+	public void setEducationHistoryDao(EducationHistoryDAO educationHistoryDao) {
+		this.educationHistoryDao = educationHistoryDao;
+	}
+
 	@Transactional(propagation=Propagation.REQUIRES_NEW, readOnly=true)
 	public User getUser(long userid) {
 		User user = userdao.load(userid);
@@ -45,7 +53,10 @@ public class RegistrationService {
 		EnglishProficiency englishProficiency = new EnglishProficiency();
 		englishProficiencyDao.create(englishProficiency);
 		
-		applicationdao.create(user, personalInfo, englishProficiency);
+		EducationHistoryForm educationHistoryForm = new EducationHistoryForm();	
+		educationHistoryDao.create(educationHistoryForm);
+		
+		applicationdao.create(user, personalInfo, englishProficiency, educationHistoryForm);
 		
 		return userdao.create(user);
 	}

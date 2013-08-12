@@ -3,6 +3,8 @@ package mum.compro.onlineapp;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import mum.compro.onlineapp.application.Application;
+import mum.compro.onlineapp.application.ApplicationService;
 import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
 import mum.compro.onlineapp.educationhistory.EducationHistoryService;
 
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @SessionAttributes("user")
 public class ApplicationController {
+	@Resource
+	private ApplicationService applicationService;
 	@Resource
 	private RegistrationService registrationService;
 	@Resource
@@ -34,15 +38,16 @@ public class ApplicationController {
 		User user = (User) session.getAttribute("user");
 		if (user != null) {
 			// personal information
+			Application application = user.getApplication();			
 			long id = user.getId();
-			PersonalInfo personalInfo = personalInfoService.getPersonalInfo(id);
+			PersonalInfo personalInfo = personalInfoService.getPersonalInfo(application.getPersonalInfo().getId());
 			if (personalInfo != null)
-				model.addAttribute("personalInfo", personalInfoService.getPersonalInfo(1));
+				model.addAttribute("personalInfo", personalInfo);
 			model.addAttribute("countryList", personalInfoService.getAllCountryList());
 
 			// english proficiency
 			EnglishProficiency ep = englishProficiencyService
-					.getEnglishProficiency(id);
+					.getEnglishProficiency(application.getEnglishProficiency().getId());
 			if (ep != null) {
 				model.addAttribute("englishProficiency", ep);
 			}
@@ -67,6 +72,13 @@ public class ApplicationController {
 		} else {
 			return "login";
 		}
+	}
+	
+	@RequestMapping(value = "/application/submitapplication", method = RequestMethod.POST)
+	public String submitApplication(HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		applicationService.submitApplication(user);
+		return "redirect:/application";
 	}
 
 }

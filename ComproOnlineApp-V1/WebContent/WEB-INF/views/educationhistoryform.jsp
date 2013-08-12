@@ -6,14 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" media="screen"
-	href="${validatorCssURL}" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="${educationhistory}" />
-<c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
-<c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
-<c:url value="/resources/js/comproOnline.js" var="jsURL" />
-<c:url value="/resources/js/educationhistoryvalidator.js" var="validator" />
+<c:url value="/resources/js/educationhistoryvalidator.js" var="educationhistoryvalidator" />
+<script type="text/javascript" src="${educationhistoryvalidator}"></script>
 </head>
 <body>
 

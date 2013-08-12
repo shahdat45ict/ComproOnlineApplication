@@ -5,9 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:url value="/resources/js/jquery-2.0.3.min.js" var="jqueryURL" />
-<c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
 <c:url value="/resources/js/comproOnline.js" var="jsURL" />
+<script type="text/javascript" src="${jsURL}"></script>
 <title>Compro Online Application - English Proficiency</title>
 
 </head>
@@ -16,7 +15,7 @@
 		<div id="wrapper_in">
 			<div id="wrapper_middle">
 				<div id="wrapper_left">								  	
-					<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post"	id="formEnglishProficiency" class="cmxform">
+					<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post" id="formEnglishProficiency" class="cmxform">
 						<div class="header">English Proficiency</div>
 						<div class="box">
 							<span class="subHeader">English Fluency</span>

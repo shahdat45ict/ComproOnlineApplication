@@ -21,7 +21,8 @@
 	   <property name="userdao" ref="userDAO" />
 	   <property name="applicationdao" ref="applicationDAO" />
 	   <property name="personalInfoDao" ref="personalInfoDAO" />
-	   <property name="englishProficiencyDao" ref="englishProficiencyDAO" />	   
+	   <property name="englishProficiencyDao" ref="englishProficiencyDAO" />
+	   <property name="educationHistoryDao" ref="educationHistoryDAO" />	   
 	</bean>
 	
 	<bean id="passwordService" class="mum.compro.onlineapp.PasswordService">
@@ -30,6 +31,10 @@
 	
 	<bean id="userDAO" class="mum.compro.onlineapp.UserDAO" init-method="init">
 	   <property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="applicationService" class="mum.compro.onlineapp.application.ApplicationService">
+     <property name="applicationDao" ref="applicationDAO" />
 	</bean>
 	
 	<bean id="applicationDAO" class="mum.compro.onlineapp.application.ApplicationDAO" init-method="init">
@@ -57,7 +62,6 @@
  	<bean id="englishProficiencyDAO" class="mum.compro.onlineapp.EnglishProficiencyDAO" init-method="init">
    	 	<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
 		
 	<!-- Hibernate SessionFactory -->
 	<bean id="sessionFactory"

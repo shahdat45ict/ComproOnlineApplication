@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<d:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
+<d:url value="/resources/js/personal-info.js" var="jsURL" />
+<script type="text/javascript" src="${validatorURL}"></script>
+<script type="text/javascript" src="${jsURL}"></script>
 </head>
 <body>
-<div id="wrapper">
-<div id="wrapper_in">
-<div id="wrapper_middle">
-<div id="wrapper_left">
-    <form action="application/personalinfo" method="post" id="formPersonalInfo" class="cmxform">
+    <form action="application/personalinfo<d:if test='${not empty personalInfo.id}'>/${personalInfo.id}</d:if>" method="post" id="formPersonalInfo" class="cmxform">
 		<table>
 			<tr>
 				<td><label for="txtFirstName">First Name(s):</label></td>
@@ -133,14 +133,8 @@
 				</td>
 			</tr>			
 		</table>
-		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />		
+		<input type="submit" value="Save Personal Information" class="button" style="margin-left:158px;" />		
 	</form>
-</div>
-<div id="wrapper_right">
 
-</div>	
-</div>
-</div>	
-</div>
 </body>
 </html>	

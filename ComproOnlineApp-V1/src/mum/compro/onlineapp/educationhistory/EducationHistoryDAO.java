@@ -2,6 +2,7 @@ package mum.compro.onlineapp.educationhistory;
 
 import java.util.List;
 
+import mum.compro.onlineapp.EnglishProficiency;
 import mum.compro.onlineapp.User;
 
 import org.hibernate.Criteria;
@@ -40,6 +41,11 @@ public class EducationHistoryDAO {
 	@Transactional(propagation = Propagation.SUPPORTS)
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sf = sessionFactory;
+	}
+	
+	@Transactional
+	public void create(EducationHistoryForm educationHistoryForm) {
+		sf.getCurrentSession().persist(educationHistoryForm);
 	}
 	
 	@Transactional
