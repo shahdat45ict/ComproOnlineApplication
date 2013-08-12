@@ -39,12 +39,13 @@ public class Application {
 	public Application() {
 	}
 	
-	public Application(String disposition, String status, User user, PersonalInfo personalInfo, EnglishProficiency englishProficiency) {
+	public Application(String disposition, String status, User user, PersonalInfo personalInfo, EnglishProficiency englishProficiency, EducationHistoryForm educationHistoryForm) {
 		this.disposition = disposition;
 		this.status = status;
 		this.user = user;
 		this.personalInfo = personalInfo;
 		this.englishProficiency = englishProficiency;
+		this.educationHistoryForm = educationHistoryForm;
 	}
 
 	public long getId() {

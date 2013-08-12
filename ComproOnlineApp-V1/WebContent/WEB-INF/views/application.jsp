@@ -61,12 +61,28 @@ Soon after you have submitted your application, we will notify you of your preli
   <div>
  	  <jsp:include page="/WEB-INF/views/educationhistoryform.jsp" flush="true"></jsp:include>
   </div>
-  
+  <h3>Application Form Information Agreement</h3>
+  <div>      
+ 	  <form method="post" action="application/submitapplication" id="formApplication" class="cmxform">
+		<input type="checkbox" name="agreement" value="yes">I hereby certify that all of the information provided in this form is true and accurate, and I further certify that I have carefully read the entire agreement and agree to all provisions
+         <input type="submit" value="Submit Application" class="button" style="width: auto; margin-left: 158px;" />
+	</form>
+	<p>
+		<b>IMPORTANT NOTE:</b> You will receive a confirmation email when your
+		application is received. If you do not receive this confirmation email
+		within 5 days, then please email directly to our Admissions office at
+		admissionstaff1@mum.com. We find that sometimes our response emails
+		are caught in spam folders, or there may have been a network failure.
+	</p>
+	<p>Please click the "Submit" button only once. If you do not see a
+		JavaScript alert, then your data is being sent. Please wait online
+		until a confirmation screen appears.</p>
+  </div>
 </div>
 </div>
 <div id="wrapper_right">
  <ul>
- <li><a href="../logout">Log Out</a></li>
+ <li><a href="logout">Log Out</a></li>
  </ul>
 </div>
 </div>

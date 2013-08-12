@@ -12,10 +12,6 @@
 <script type="text/javascript" src="${jsURL}"></script>
 </head>
 <body>
-<div id="wrapper">
-<div id="wrapper_in">
-<div id="wrapper_middle">
-<div id="wrapper_left">
     <form action="application/personalinfo<d:if test='${not empty personalInfo.id}'>/${personalInfo.id}</d:if>" method="post" id="formPersonalInfo" class="cmxform">
 		<table>
 			<tr>
@@ -137,14 +133,8 @@
 				</td>
 			</tr>			
 		</table>
-		<input type="submit" value="Submit" class="button" style="margin-left:158px;" />		
+		<input type="submit" value="Save Personal Information" class="button" style="margin-left:158px;" />		
 	</form>
-</div>
-<div id="wrapper_right">
 
-</div>	
-</div>
-</div>	
-</div>
 </body>
 </html>	

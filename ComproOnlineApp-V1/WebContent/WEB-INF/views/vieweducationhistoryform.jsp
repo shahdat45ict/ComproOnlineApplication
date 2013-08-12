@@ -35,11 +35,10 @@
 
 <div id="wrapper">
 	<div id="wrapper_in">
-		<div id="header">
-			<span class="logo"><a href="/ComproOnlineApplication">Education History Form</a></span>
-			<img src="/ComproOnlineApplication/resources/images/berries.jpg"
-				width="1000" height="198" />
-		</div>
+<div id="header">
+<span class="logo"><a href="/ComproOnlineApplication">Compro Online Application</a></span>
+<img src="/ComproOnlineApplication/resources/images/header.png" width="1000" height="160" />
+</div>
 		<div id="wrapper_middle">
 			<div id="wrapper_left">
 					<form:form action="submiteducationhistoryform" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
