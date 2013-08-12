@@ -42,5 +42,19 @@ public class ApplicationService {
 	public Application getApplication(long id){
 		return applicationDao.getApplication(id);
 	}
+
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void setApplicationDisposition(long id, String disposition){
+		applicationDao.setApplicationDisposition(id, disposition);
+	}
 	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void setApplicationUnsubmitted(long id, String status){
+		applicationDao.setApplicationUnsubmitted(id, status);
+	}	
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public Application searchApplicant(long id){
+		return applicationDao.getApplication(id);
+	}
 }

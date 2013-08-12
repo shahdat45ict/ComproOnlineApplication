@@ -33,6 +33,7 @@
   <li><a href="login">Log in</a></li>
  <%}else{ %>
   <li><a href="application">Application</a></li>
+  <li><a href="changePassword">Change Password</a></li>
   <li><a href="logout">Log out</a></li>
  <%} %>
 </ul>

@@ -63,4 +63,18 @@ public class ApplicationDAO {
 		return (Application) sf.getCurrentSession().get(Application.class, id);
 	}
 	
+	public void setApplicationDisposition(long id, String disposition){
+		Query query = (Query) sf.getCurrentSession().createQuery("update Application set disposition = :disposition where id = :id");
+		query.setParameter("disposition", disposition);
+		query.setParameter("id", id);
+		query.executeUpdate();
+	}
+	
+	public void setApplicationUnsubmitted(long id, String status){
+		Query query = (Query) sf.getCurrentSession().createQuery("update Application set status = :status where id = :id");
+		query.setParameter("status", status);
+		query.setParameter("id", id);
+		query.executeUpdate();
+	}
+	
 }

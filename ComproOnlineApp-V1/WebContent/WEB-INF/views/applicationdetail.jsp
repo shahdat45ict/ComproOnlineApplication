@@ -21,6 +21,7 @@
 			<div id="wrapper_middle">
 			<div id="wrapper_left">
 			   <h1 class="admin-title">Application Detail</h1>
+			        <h1 class="title">Personal Information</h1>
 					<c:choose>
 						<c:when test="${empty application}">
                                   There is no submitted application to show
@@ -43,11 +44,35 @@
 							
 						</c:otherwise>
 					</c:choose>
+					
+					<h1 class="title">English Proficiency</h1>
+					
+					<h1 class="title">Education History</h1>
+					
+					<h1 class="title">Set Application Disposition</h1>
+	<form method="post" action="../application/setapplicationdisposition/${application.id}" id="formDisposition" class="cmxform">
+				 <select id="selectDisposition" name="disposition">
+				   <option value="pass" <c:if test="${application.disposition == 'pass'}">selected="selected"</c:if>>Pass</option>
+				   <option value="fail" <c:if test="${application.disposition == 'fail'}">selected="selected"</c:if>>Fail</option>
+				   <option value="undetermined" <c:if test="${application.disposition == 'undetermined'}">selected="selected"</c:if>>Un Determined</option>
+				 </select>
+         <input type="submit" value="Set Disposition" class="button" style="width: auto; margin-left: 158px;" />
+	</form>
+	
+	<h1 class="title">Set Application Un Submitted</h1>
+	<form method="post" action="../application/set-application-unsubmitted/${application.id}" id="formDisposition" class="cmxform">
+				 <select id="selectStatus" name="status">
+				   <option value="submitted" <c:if test="${application.status == 'submitted'}">selected="selected"</c:if>>Submitted</option>
+				   <option value="un-submitted" <c:if test="${application.status == 'un-submitted'}">selected="selected"</c:if>>Un Submitted</option>
+				 </select>
+         <input type="submit" value="Set Application Un Submitted" class="button" style="width: auto; margin-left: 158px;" />
+	</form>
 			  </div>
 			  <div id="wrapper_right">
 			   		<h3 class="widget-title">Meta</h3>
 					<ul>
-						<li><a href="../logout">Log Out</a></li>
+					    <li><a href="./dashboard">Dashboard</a></li>
+						<li><a href="./logout">Log Out</a></li>					
 					</ul>
 			  </div>
 			

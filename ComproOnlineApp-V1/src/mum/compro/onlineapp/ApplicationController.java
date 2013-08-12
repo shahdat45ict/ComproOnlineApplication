@@ -88,5 +88,26 @@ public class ApplicationController {
 		model.addAttribute("application", application);
 		return "applicationdetail";
 	}
+	
+
+	@RequestMapping(value = "/application/setapplicationdisposition/{id}", method = RequestMethod.POST)
+	public String setApplicationDisposition(@PathVariable long id, String disposition) {
+		applicationService.setApplicationDisposition(id, disposition);
+		return "redirect:/dashboard";
+	}
+	
+	@RequestMapping(value = "/application/set-application-unsubmitted/{id}", method = RequestMethod.POST)
+	public String setApplicationUnsubmitted(@PathVariable long id, String status) {
+		applicationService.setApplicationUnsubmitted(id, status);
+		return "redirect:/dashboard";
+	}
+	
+	@RequestMapping(value = "/search-applicant", method = RequestMethod.POST)
+	public String searchApplicant(String email, Model model) {
+	    User user = registrationService.getUserbyEmail(email);
+		Application application = applicationService.searchApplicant(user.getId());
+		model.addAttribute("application", application);
+		return "applicationdetail";
+	}	
 
 }

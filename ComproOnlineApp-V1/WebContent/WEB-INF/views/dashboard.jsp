@@ -20,7 +20,18 @@
 			</div>
 			<div id="wrapper_middle">
 				<div id="wrapper_left">
+
+					<h1 class="admin-title">Search For Applicant</h1>
+					<form method="post" action="search-applicant" id="formSearch"
+						class="cmxform">
+						Email : <input type="text" name="email" /> <input type="submit"
+							value="Search" class="button"
+							style="width: auto; margin-left: 10px; padding: 2px 4px" />
+					</form>
+					<br style="clear: both" />
+
 					<h1 class="admin-title">Submitted Applications</h1>
+
 					<c:choose>
 						<c:when test="${empty submittedApplications}">
                                   There is no submitted application to show
@@ -42,7 +53,10 @@
 											${application.personalInfo.surName}</td>
 										<td style="padding: 10px"><div class="title">${application.personalInfo.email}</div></td>
 										<td style="padding: 10px"><div class="title">${application.disposition}</div></td>
-									    <td style="padding: 10px"><div class="title"><a href="application-detail/${application.id}">View Detail</a></div></td>
+										<td style="padding: 10px"><div class="title">
+												<a href="application-detail/${application.id}">View
+													Detail</a>
+											</div></td>
 									</tr>
 								</c:forEach>
 
@@ -50,7 +64,8 @@
 						</c:otherwise>
 					</c:choose>
 
-                    <br style="clear:both" /> <br style="clear:both" /> <br style="clear:both" /> 
+					<br style="clear: both" /> <br style="clear: both" /> <br
+						style="clear: both" />
 					<h1 class="admin-title">Un Submitted Applications</h1>
 					<c:choose>
 						<c:when test="${empty unSubmittedApplications}">
@@ -68,12 +83,31 @@
 								</thead>
 								<c:forEach var="application" items="${unSubmittedApplications}">
 									<tr>
-										<td style="padding: 10px">${application.personalInfo.firstName}
-											${application.personalInfo.middleName}
-											${application.personalInfo.surName}</td>
-										<td style="padding: 10px"><div class="title">${application.personalInfo.email}</div></td>
+										<td style="padding: 10px"><c:choose>
+												<c:when test="${empty application.personalInfo.firstName}">
+                                                         ${application.user.firstName} ${application.user.lastName}
+                                                    </c:when>
+												<c:otherwise>
+													    ${application.personalInfo.firstName}
+														${application.personalInfo.middleName}
+														${application.personalInfo.surName}
+                                                    </c:otherwise>
+											</c:choose></td>
+										<td style="padding: 10px"><div class="title">
+												<c:choose>
+													<c:when test="${empty application.personalInfo.email}">
+                                                         ${application.user.email}
+                                                    </c:when>
+													<c:otherwise>
+                                                         ${application.personalInfo.email}
+                                                    </c:otherwise>
+												</c:choose>
+											</div></td>
 										<td style="padding: 10px"><div class="title">${application.disposition}</div></td>
-										<td style="padding: 10px"><div class="title"><a href="application-detail/${application.id}">View Detail</a></div></td>
+										<td style="padding: 10px"><div class="title">
+												<a href="application-detail/${application.id}">View
+													Detail</a>
+											</div></td>
 									</tr>
 								</c:forEach>
 
