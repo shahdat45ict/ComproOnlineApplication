@@ -30,7 +30,12 @@ public class ApplicationController {
 	private EducationHistoryService educationHistoryService;
 
 	@RequestMapping(value = "/")
-	public String index() {
+	public String index(HttpSession session, Model model) {
+		User user = (User) session.getAttribute("user");
+		if(user != null){
+		 model.addAttribute("user", user);
+		 model.addAttribute("userType", user.getUserType());
+		}
 		return "index";
 	}
 

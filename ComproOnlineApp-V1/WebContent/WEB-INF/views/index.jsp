@@ -24,19 +24,21 @@
 </div>
 <div id="wrapper_right">
 <h3 class="widget-title">Meta</h3>
-<ul>
-<%
-  Object o = request.getAttribute("user");
-  if(o == null){
- %>
-  <li><a href="registration">Register</a></li>
-  <li><a href="login">Log in</a></li>
- <%}else{ %>
-  <li><a href="application">Application</a></li>
-  <li><a href="changePassword">Change Password</a></li>
-  <li><a href="logout">Log out</a></li>
- <%} %>
-</ul>
+                      <ul>
+					    <c:choose>
+						<c:when test="${empty user}">
+  							<li><a href="registration">Register</a></li>
+  							<li><a href="login">Log in</a></li>
+                        </c:when>
+						<c:otherwise>
+						      <c:if test="${not empty userType and userType  == 'Administrator'}"> <li><a href="dashboard">Dashboard</a></li> </c:if>
+                              <c:if test="${not empty userType and userType  == 'AdmissionStaff'}"> <li><a href="dashboard">Dashboard</a></li> </c:if>
+                              <c:if test="${not empty userType and userType  == 'Applicant'}"> <li><a href="application">Application</a></li> </c:if>
+  							  <li><a href="changePassword">Change Password</a></li>
+                              <li><a href="logout">Log out</a></li>						
+						</c:otherwise>
+						</c:choose>
+					 </ul>	
 </div>
 </div>
 <div id="footer">

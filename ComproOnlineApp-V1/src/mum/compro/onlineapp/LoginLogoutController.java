@@ -37,19 +37,19 @@ public class LoginLogoutController {
 			ModelAndView modelAndView = new ModelAndView();
 			modelAndView.addObject("user", email);
 			session.setAttribute("user", user);
-			return "redirect:dashboard";
+			return "redirect:/";
 		} else if (checkValidity == 1 && user.getUserType() != null
 				&& user.getUserType().equals(UserType.AdmissionStaff)) {
 			// session.setAttribute("user", user);
 			ModelAndView modelAndView = new ModelAndView();
 			modelAndView.addObject("user", email);
 			session.setAttribute("user", user);
-			return "redirect:dashboard";
+			return "redirect:/";
 		} else if (checkValidity == 1) {
 			ModelAndView modelAndView = new ModelAndView();
 			modelAndView.addObject("user", email);
 			session.setAttribute("user", user);
-			return "redirect:application";
+			return "redirect:/";
 		} else
 			return "redirect:/loginfail";
 	}
