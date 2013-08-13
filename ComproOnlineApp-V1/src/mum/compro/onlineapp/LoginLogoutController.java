@@ -31,7 +31,7 @@ public class LoginLogoutController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(String email, String password, HttpSession session) {
 		User user = registrationService.getUserbyEmail(email);
-		int checkValidity = registrationService.checkUser(email, password);
+		int checkValidity = registrationService.checkUser(email, User.md5(password));
 		if (checkValidity == 1 && user.getUserType() != null
 				&& user.getUserType().equals(UserType.Administrator)) {
 			ModelAndView modelAndView = new ModelAndView();

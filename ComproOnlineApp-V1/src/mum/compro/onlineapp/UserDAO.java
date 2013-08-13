@@ -25,10 +25,10 @@ public class UserDAO {
 		Session session = sf.openSession();
 		 Transaction tx = session.beginTransaction();
 		  
-		  User admin=new  User("System", "Admin", "systemadmin@mum.com", "activated", "123456", UserType.Administrator); 
-		  User adst1=new  User("Admission", "Staff", "admissionstaff1@mum.com", "activated", "123456", UserType.AdmissionStaff);
-		  User adst2=new  User("Admission", "Staff", "admissionstaff2@mum.com", "activated", "123456", UserType.AdmissionStaff);
-		  User adst3=new  User("Admission", "Staff", "admissionstaff3@mum.com", "activated", "123456", UserType.AdmissionStaff);
+		  User admin=new  User("System", "Admin", "systemadmin@mum.com", "activated", User.md5("123456"), UserType.Administrator); 
+		  User adst1=new  User("Admission", "Staff", "admissionstaff1@mum.com", "activated", User.md5("123456"), UserType.AdmissionStaff);
+		  User adst2=new  User("Admission", "Staff", "admissionstaff2@mum.com", "activated", User.md5("123456"), UserType.AdmissionStaff);
+		  User adst3=new  User("Admission", "Staff", "admissionstaff3@mum.com", "activated", User.md5("123456"), UserType.AdmissionStaff);
 		  session.persist(admin);
 		  session.persist(adst1);
 		  session.persist(adst2);
