@@ -133,7 +133,7 @@
 				</td>
 			</tr>			
 		</table>
-		<input type="submit" value="Save Personal Information" class="button" style="margin-left:158px;" />		
+		<input type="submit" value="Save Personal Information" class="button" style="width: auto; float: right; margin-top: 10px;" />		
 	</form>
 
 </body>

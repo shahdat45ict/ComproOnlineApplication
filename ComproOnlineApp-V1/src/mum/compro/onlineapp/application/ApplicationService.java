@@ -3,6 +3,7 @@ package mum.compro.onlineapp.application;
 import java.text.ParseException;
 import java.util.List;
 
+import mum.compro.mail.util.MailUtil;
 import mum.compro.onlineapp.PersonalInfo;
 import mum.compro.onlineapp.User;
 
@@ -56,5 +57,29 @@ public class ApplicationService {
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public Application searchApplicant(long id){
 		return applicationDao.getApplication(id);
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void sendStatusEmailToApplicant(long id){	
+		String email = this.getApplication(id).getPersonalInfo().getEmail();
+		String emailSubject = "Application status of MUM";
+		String emailContent = "Your Submitted application to MUM for MS in Computer Science has been changed to Un Submitted status. \n\n";
+		emailContent += "Thank you. \n";
+		emailContent += "Application Service \n MUM, Fairfield, Iowa, USA.";
+		MailUtil.sendEmailTo(email, emailSubject, emailContent);
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void sendDispositionEmailToApplicant(long id, String disposition){	
+		String email = this.getApplication(id).getPersonalInfo().getEmail();
+		String emailSubject = "Application result of MUM";
+		String emailContent = "Your Submitted application to MUM for MS in Computer Science has been reviewed by our admission team. \n\n";
+		if(disposition.equals("pass"))
+			emailContent += "Congratulation, you are qualied in the primary review. \n\n";
+		if(disposition.equals("fail"))
+			emailContent += "You are not qualified in the primary review. \n\n";
+		emailContent += "Thank you. \n";
+		emailContent += "Application Service \n MUM, Fairfield, Iowa, USA.";
+		MailUtil.sendEmailTo(email, emailSubject, emailContent);
 	}
 }

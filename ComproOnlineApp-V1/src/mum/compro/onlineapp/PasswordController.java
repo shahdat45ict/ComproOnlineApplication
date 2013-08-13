@@ -29,8 +29,6 @@ public class PasswordController {
 	public String checkOldPassword(@RequestParam String oldPassword,
 			HttpSession session) {
 		User user = (User) session.getAttribute("user");
-		System.out.println(user.getEmail());
-		System.out.println(oldPassword);
 		return passwordService.checkPassword(oldPassword, user.getEmail());
 	}
 
@@ -59,7 +57,6 @@ public class PasswordController {
 	public String forgotPassword(HttpServletRequest request, HttpSession session) {
 		String email = request.getParameter("email");
 		// MailUtil.sendEmailTo(email, "reset password", " 1234");
-		System.out.println(email);
 		// User userb=(User) session.getAttribute("user");
 		User user = passwordService.getUserbyEmail(email);
 

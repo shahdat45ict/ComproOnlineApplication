@@ -3,6 +3,7 @@ package mum.compro.onlineapp;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import mum.compro.mail.util.MailUtil;
 import mum.compro.onlineapp.application.Application;
 import mum.compro.onlineapp.application.ApplicationService;
 import mum.compro.onlineapp.educationhistory.EducationHistoryForm;
@@ -98,20 +99,25 @@ public class ApplicationController {
 	@RequestMapping(value = "/application/setapplicationdisposition/{id}", method = RequestMethod.POST)
 	public String setApplicationDisposition(@PathVariable long id, String disposition) {
 		applicationService.setApplicationDisposition(id, disposition);
+		if(disposition.equals("pass")||disposition.equals("fail"))
+		   applicationService.sendDispositionEmailToApplicant(id, disposition);
 		return "redirect:/dashboard";
 	}
 	
 	@RequestMapping(value = "/application/set-application-unsubmitted/{id}", method = RequestMethod.POST)
 	public String setApplicationUnsubmitted(@PathVariable long id, String status) {
 		applicationService.setApplicationUnsubmitted(id, status);
+		applicationService.sendStatusEmailToApplicant(id);
 		return "redirect:/dashboard";
 	}
 	
 	@RequestMapping(value = "/search-applicant", method = RequestMethod.POST)
 	public String searchApplicant(String email, Model model) {
 	    User user = registrationService.getUserbyEmail(email);
-		Application application = applicationService.searchApplicant(user.getId());
-		model.addAttribute("application", application);
+	    if(user != null){
+		 Application application = applicationService.searchApplicant(user.getId());
+		 model.addAttribute("application", application);
+	    }
 		return "applicationdetail";
 	}	
 

@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <c:url value="/resources/css/style.css" var="cssURL" />
 <link rel="stylesheet" type="text/css" media="screen" href="${cssURL}" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<c:url value="/resources/js/jquery.validate.min.js" var="validatorURL" />
+<c:url value="/resources/js/search.js" var="jsURL" />
+<script type="text/javascript" src="${validatorURL}"></script>
+<script type="text/javascript" src="${jsURL}"></script>
 <title>Compro Online Application - Dashboard</title>
 </head>
 <body>
@@ -43,6 +48,7 @@
 										<th>Name</th>
 										<th>Email</th>
 										<th>Status</th>
+										<th>Disposition</th>
 										<th>Details</th>
 									</tr>
 								</thead>
@@ -52,6 +58,7 @@
 											${application.personalInfo.middleName}
 											${application.personalInfo.surName}</td>
 										<td style="padding: 10px"><div class="title">${application.personalInfo.email}</div></td>
+										<td style="padding: 10px"><div class="title">${application.status}</div></td>
 										<td style="padding: 10px"><div class="title">${application.disposition}</div></td>
 										<td style="padding: 10px"><div class="title">
 												<a href="application-detail/${application.id}">View
@@ -78,6 +85,7 @@
 										<th>Name</th>
 										<th>Email</th>
 										<th>Status</th>
+										<th>Disposition</th>
 										<th>Details</th>
 									</tr>
 								</thead>
@@ -103,6 +111,7 @@
                                                     </c:otherwise>
 												</c:choose>
 											</div></td>
+										<td style="padding: 10px"><div class="title">${application.status}</div></td>	
 										<td style="padding: 10px"><div class="title">${application.disposition}</div></td>
 										<td style="padding: 10px"><div class="title">
 												<a href="application-detail/${application.id}">View
