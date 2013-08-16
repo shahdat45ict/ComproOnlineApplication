@@ -1,5 +1,8 @@
 package mum.compro.onlineapp.application;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.text.ParseException;
 import java.util.List;
 
@@ -81,5 +84,10 @@ public class ApplicationService {
 		emailContent += "Thank you. \n";
 		emailContent += "Application Service \n MUM, Fairfield, Iowa, USA.";
 		MailUtil.sendEmailTo(email, emailSubject, emailContent);
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void getApplicationDisposition() {
+		Application application = applicationDao.getApplication(5);	
 	}
 }

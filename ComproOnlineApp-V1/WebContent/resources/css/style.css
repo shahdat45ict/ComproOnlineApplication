@@ -162,15 +162,15 @@ h1.pageTitle{
 }
 
 #site-info a {
-	color: black;
+	color: #666666;
 	font-weight: bold;
-	color: black;
 	text-decoration: none;
 	font-size:14px;
+	padding-left: 5px;
 }
 .admin-title{
 	display:block;
-	font-size:16px;
+	font-size:20px;
 	margin-bottom:10px;
 }
 .admin-command-link{
@@ -195,4 +195,42 @@ h1.pageTitle{
 {
 	display:none;
 	color:#ff0000;
+}
+
+fieldset{
+	padding: 20px 0px 20px 20px;
+	margin-top: 20px;
+}
+legend{
+	margin-left: 20px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.rounded-corner {
+    border-collapse: collapse;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-size: 12px;
+    text-align: left;
+    width: 700px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.rounded-corner th {
+    background: none repeat scroll 0 0 #B9C9FE;
+    color: #003399;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+}
+.rounded-corner tbody tr {
+ background: none repeat scroll 0 0 #E8EDFF;
+ border-top: 1px solid #FFF;
+}
+.rounded-corner tbody tr:hover {
+    background: none repeat scroll 0 0 #B9C9FE;
+}
+.cpyrt{
+	float: right;
+    padding-right: 5px;
 }

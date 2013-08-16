@@ -11,10 +11,6 @@
 </head>
 <body>
 
-<div id="wrapper">
-	<div id="wrapper_in">
-		<div id="wrapper_middle">
-			<div id="wrapper_left">
 					<%String url = request.getContextPath() + "/application/saveeducationhistoryform"; %>
 					<form:form action="<%=url %>" method="post" id="educationhistoryform" class="cmxform" name="educationhistoryform" commandName="form">  
 					<form:hidden path="educationHistoryId"/>
@@ -319,11 +315,5 @@ function saveForm(){
 	}
 
 </script>
-			</div>
-			<div id="wrapper_right"></div>
-		</div>
-		
-	</div>
-</div>
 </body>
 </html>

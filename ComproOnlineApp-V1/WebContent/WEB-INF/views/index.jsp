@@ -19,10 +19,18 @@
 <div id="wrapper_middle">
 
 <div id="wrapper_left">
-
-
+<object type="application/x-shockwave-flash" style="width:700px;height:370px;" data="http://www.youtube.com/v/wcUMMIrDy48&amp;hl=en&amp;fs=1" title="JoomlaWorks AllVideos Player">
+ <param name="movie" value="http://www.youtube.com/v/wcUMMIrDy48&amp;hl=en&amp;fs=1">
+ <param name="quality" value="high">
+ <param name="wmode" value="transparent">
+ <param name="bgcolor" value="#010101">
+ <param name="allowfullscreen" value="true">
+ <param name="allowscriptaccess" value="always">
+</object>
 </div>
 <div id="wrapper_right">
+<c:if test="${not empty user}">Welcome ${user.firstName} ${user.lastName}</c:if>
+<br style="clear: both" /><br style="clear: both" />
 <h3 class="widget-title">Meta</h3>
                       <ul>
 					    <c:choose>
@@ -45,6 +53,7 @@
   <div id="colophon">
 	  <div id="site-info">
 	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
+	    <span class="cpyrt">Maharishi University Of Management &copy; 2013</span>
 	  </div>
   </div>
 </div>

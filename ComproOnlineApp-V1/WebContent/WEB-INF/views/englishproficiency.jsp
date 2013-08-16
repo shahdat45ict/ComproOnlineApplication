@@ -11,11 +11,7 @@
 
 </head>
 <body>
-	<div id="wrapper">
-		<div id="wrapper_in">
-			<div id="wrapper_middle">
-				<div id="wrapper_left">								  	
-					<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post" id="formEnglishProficiency" class="cmxform">
+<form action="/ComproOnlineApplication/englishproficiency<c:if test='${not empty englishProficiency.id}'>/${englishProficiency.id}</c:if>" method="post" id="formEnglishProficiency" class="cmxform">
 						<div class="header">English Proficiency</div>
 						<div class="box">
 							<span class="subHeader">English Fluency</span>
@@ -70,7 +66,7 @@
 							<table class="indent">
 								<tbody>
 									<tr>
-										<td>TOEFL</td>
+										<td colspan="4">TOEFL</td>
 										<td>&nbsp;</td>
 									</tr>
 									<tr>
@@ -89,16 +85,13 @@
 										<td><input type="text" name="toeflScore" 
 										id="toeflScore" size="4" maxlength="10" value="${englishProficiency.toeflScore}"></td>
 									</tr>
+									
 									<tr>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>GRE</td>
-										<td>&nbsp;</td>
+										<td colspan="5">GRE</td>
 									</tr>
 									<tr>
 										<td>Year Taken</td>
-										<td><select name="greYearTaken" id="greYearTaken" style="width: 60;">
+										<td colspan="4"><select name="greYearTaken" id="greYearTaken" style="width: 60;">
 												<c:forEach var="item" items="${greYearOptions}">  
 									            	<option value="${item.value}" 
 										             ${item.value==englishProficiency.greYearTaken ? 'selected' : ''}>
@@ -109,14 +102,14 @@
 									</tr>
 									<tr>
 										<td>Verbal Score</td>
-										<td><input type="text" name="greVerbalScore" value="${englishProficiency.toeflScore}"
+										<td><input type="text" name="greVerbalScore" value="${englishProficiency.greVerbalScore}"
 										id="greVerbalScore" size="4" maxlength="10"></td>
 										<td>&nbsp;</td>
 										<td>Percentile</td>
 										<td><input type="text" name="greVerbalPercentile" value="${englishProficiency.greVerbalPercentile}"
 										 id="greVerbalPercentile" size="4" maxlength="10"></td>
 									</tr>
-									<tr>
+									 <tr>
 										<td>Quantitative Score</td>
 										<td><input type="text" name="greQuantitativeScore"	value="${englishProficiency.greQuantitativeScore}"
 										id="greQuantitativeScore" size="4" maxlength="10"></td>
@@ -137,18 +130,13 @@
 									<tr>
 										<td colspan="4"></td>
 										<td><input type="submit" value="Save English Fluency" style="height: 33px;font-weight: bold;font-size: 15px;"/></td>
-									</tr>
+									</tr> 
 								</tbody>
-							</table>
-							<br>
+							</table> 
+							
 						</div>
 
 					</form>
 
-				</div>
-				<div id="wrapper_right"></div>
-			</div>
-		</div>
-	</div>
 </body>
 </html>

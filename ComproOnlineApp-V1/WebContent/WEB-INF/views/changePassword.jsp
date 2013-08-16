@@ -54,13 +54,15 @@
 	
 </div>
 <div id="wrapper_right">
-
+<c:if test="${not empty user}">Welcome ${user.firstName} ${user.lastName}</c:if>
+<br style="clear: both" /><br style="clear: both" />
 </div>	
 </div>
 <div id="footer">
   <div id="colophon">
 	  <div id="site-info">
 	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
+	    <span class="cpyrt">Maharishi University Of Management &copy; 2013</span>
 	  </div>
   </div>
 </div>

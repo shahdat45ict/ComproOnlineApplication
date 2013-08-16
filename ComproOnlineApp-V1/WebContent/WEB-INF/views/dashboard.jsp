@@ -26,15 +26,18 @@
 			<div id="wrapper_middle">
 				<div id="wrapper_left">
 
-					<h1 class="admin-title">Search For Applicant</h1>
 					<form method="post" action="search-applicant" id="formSearch"
 						class="cmxform">
+					 <fieldset style="width:525px">
+					 <legend>Search For Applicant</legend>
 						Email : <input type="text" name="email" /> <input type="submit"
 							value="Search" class="button"
 							style="width: auto; margin-left: 10px; padding: 2px 4px" />
+					</fieldset>
 					</form>
-					<br style="clear: both" />
-
+					
+					<br style="clear:both" /><br style="clear:both" />
+                    
 					<h1 class="admin-title">Submitted Applications</h1>
 
 					<c:choose>
@@ -42,16 +45,17 @@
                                   There is no submitted application to show
                         </c:when>
 						<c:otherwise>
-							<table border="1">
+							<table class="rounded-corner">
 								<thead>
 									<tr align="center">
-										<th>Name</th>
+										<th class="rounded-name">Name</th>
 										<th>Email</th>
 										<th>Status</th>
 										<th>Disposition</th>
 										<th>Details</th>
 									</tr>
 								</thead>
+								<tbody>
 								<c:forEach var="application" items="${submittedApplications}">
 									<tr>
 										<td style="padding: 10px">${application.personalInfo.firstName}
@@ -66,20 +70,19 @@
 											</div></td>
 									</tr>
 								</c:forEach>
-
+								</tbody>
 							</table>
 						</c:otherwise>
 					</c:choose>
 
-					<br style="clear: both" /> <br style="clear: both" /> <br
-						style="clear: both" />
+
 					<h1 class="admin-title">Un Submitted Applications</h1>
 					<c:choose>
 						<c:when test="${empty unSubmittedApplications}">
                             There is no Un Submitted application to show
                         </c:when>
 						<c:otherwise>
-							<table border="1">
+							<table class="rounded-corner">
 								<thead>
 									<tr align="center">
 										<th>Name</th>
@@ -89,6 +92,7 @@
 										<th>Details</th>
 									</tr>
 								</thead>
+								<tbody>
 								<c:forEach var="application" items="${unSubmittedApplications}">
 									<tr>
 										<td style="padding: 10px"><c:choose>
@@ -119,7 +123,7 @@
 											</div></td>
 									</tr>
 								</c:forEach>
-
+								</tbody>
 							</table>
 						</c:otherwise>
 					</c:choose>
@@ -128,6 +132,8 @@
 				</div>
 
 				<div id="wrapper_right">
+				 <c:if test="${not empty user}">Welcome ${user.firstName} ${user.lastName}</c:if>
+                 <br style="clear: both" /><br style="clear: both" />
 					<h3 class="widget-title">Meta</h3>
 					<ul>
 						<li><a href="logout">Log Out</a></li>
@@ -140,6 +146,7 @@
 					<div id="site-info">
 						<a rel="home" title="Compro Online Application"
 							href="/ComproOnlineApplication">Compro Online Application</a>
+						<span class="cpyrt">Maharishi University Of Management &copy; 2013</span>
 					</div>
 				</div>
 			</div>

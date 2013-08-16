@@ -22,7 +22,7 @@ public class UserDAO {
 	 */
 
 	public void init() {
-		Session session = sf.openSession();
+/*		Session session = sf.openSession();
 		 Transaction tx = session.beginTransaction();
 		  
 		  User admin=new  User("System", "Admin", "systemadmin@mum.com", "activated", User.md5("123456"), UserType.Administrator); 
@@ -34,7 +34,7 @@ public class UserDAO {
 		  session.persist(adst2);
 		  session.persist(adst3);
 		  tx.commit();
-		  session.close();
+		  session.close();*/
 	}
 
 	@Transactional(propagation = Propagation.SUPPORTS)

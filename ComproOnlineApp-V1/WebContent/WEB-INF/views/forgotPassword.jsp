@@ -54,6 +54,7 @@ Please enter your registered email below:
   <div id="colophon">
 	  <div id="site-info">
 	    <a rel="home" title="Compro Online Application" href="/ComproOnlineApplication">Compro Online Application</a>
+	    <span class="cpyrt">Maharishi University Of Management &copy; 2013</span>
 	  </div>
   </div>
 </div>
